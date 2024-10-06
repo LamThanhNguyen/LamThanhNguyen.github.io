@@ -1,13 +1,12 @@
 baseURL = 'https://lamthanhnguyen.github.io/'
 languageCode = 'en-us'
-title = 'Liam's Blogs'
+title = "Liam's Blogs"
 theme = "ananke"
 [params]
     font_family = "Roboto"
     font_url = "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
     description = "Sharing knowledge on Information Technology and Artificial Intelligence"
     keywords = "AI, Information Technology, Machine Learning"
-    logo = "/static/images/liam_logo.webp"
     social = [
         { icon = "github", url = "https://github.com/LamThanhNguyen" },
     ]
