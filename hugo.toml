@@ -1,6 +1,6 @@
 baseURL = 'https://lamthanhnguyen.github.io/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Liam's Blogs'
 theme = "ananke"
 [params]
     font_family = "Roboto"
