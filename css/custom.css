@@ -1,0 +1,16 @@
+.header {
+    background-image: url('/images/liam_logo.png');
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1 {
+    color: white; /* Ensure the text is visible against the background */
+    font-size: 48px; /* Adjust the font size */
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Add text shadow for better readability */
+}
