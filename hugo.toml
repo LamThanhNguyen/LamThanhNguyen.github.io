@@ -2,3 +2,18 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = "ananke"
+[params]
+  font_family = "Roboto"
+  font_url = "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+  description = "Sharing knowledge on Information Technology and Artificial Intelligence"
+  keywords = "AI, Information Technology, Machine Learning"
+  logo = "images/liam_logo.png"
+  social = [
+    { icon = "github", url = "https://github.com/LamThanhNguyen" },
+  ]
+[markup]
+  [markup.highlight]
+    style = "monokai"
+
+[params]
+  copyright = "© 2024 Liam. All rights reserved."
