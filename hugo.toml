@@ -11,9 +11,7 @@ theme = "ananke"
   social = [
     { icon = "github", url = "https://github.com/LamThanhNguyen" },
   ]
+  copyright = "© 2024 Liam. All rights reserved."
 [markup]
   [markup.highlight]
     style = "monokai"
-
-[params]
-  copyright = "© 2024 Liam. All rights reserved."
