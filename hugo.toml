@@ -2,3 +2,6 @@ baseURL = 'https://lamthanhnguyen.github.io/'
 languageCode = 'en-us'
 title = 'Liam Blogs'
 theme = 'ananke'
+
+[pagination]
+pagerSize = 10
