@@ -1,7 +1,11 @@
-baseURL = 'https://lamthanhnguyen.github.io/'
-languageCode = 'en-us'
 title = 'Liam Blogs'
+baseURL = 'https://lamthanhnguyen.github.io/'
 theme = 'ananke'
+languageCode = 'en-us'
 
 [pagination]
 pagerSize = 10
+
+[params]
+favicon = "/images/favicon_logo.webp"
+recent_posts_number = 5

@@ -1,11 +1,28 @@
 ---
 title: "About"
-description: "A few years ago, while visiting or, rather, rummaging about Notre-Dame, the author of this book found, in an obscure nook of one of the towers, the following word, engraved by hand upon the wall: —ANANKE."
-featured_image: '/images/Victor_Hugo-Hunchback.jpg'
+description: "Discover the story behind 'Exploring Tech: Liam's Journey' and the inspiration driving this blog."
+featured_image: '/images/image_about.webp'
 menu:
   main:
     weight: 1
 ---
-{{< figure src="/images/Victor_Hugo-Hunchback.jpg" title="Illustration from Victor Hugo et son temps (1881)" >}}
+{{< figure src="/images/image_about.webp" title="Exploring Tech: Liam's Journey" >}}
 
-_The Hunchback of Notre-Dame_ (French: _Notre-Dame de Paris_) is a French Romantic/Gothic novel by Victor Hugo, published in 1831. The original French title refers to Notre Dame Cathedral, on which the story is centered. English translator Frederic Shoberl named the novel The Hunchback of Notre Dame in 1833 because at the time, Gothic novels were more popular than Romance novels in England. The story is set in Paris, France in the Late Middle Ages, during the reign of Louis XI.
+Welcome to **Exploring Tech: Liam's Journey**—a space dedicated to my passion for technology, programming, and innovation. This blog is my digital canvas, where I share insights, projects, and experiences as I navigate the ever-evolving world of Artificial Intelligence, software development, and the latest tech trends.
+
+### Why This Blog?
+A few years ago, I started my journey into the tech world with curiosity and a deep desire to understand how things work. Over time, I realized that sharing knowledge is as fulfilling as gaining it. This blog is my way of contributing to the tech community, providing content that educates, inspires, and sparks innovation.
+
+### What You’ll Find Here:
+- **AI Adventures**: From machine learning concepts to hands-on projects.
+- **Programming Insights**: Tips, tutorials, and lessons learned from coding.
+- **Tech Reviews**: Exploring tools, platforms, and frameworks that shape the industry.
+- **Cloud Computing**: Deep dives into cloud services and their transformative power.
+
+### My Vision
+I believe technology is not just about tools and gadgets—it's about solving real-world problems, pushing boundaries, and making life better. Through this blog, I aim to connect with like-minded individuals, foster a love for learning, and inspire the next wave of tech enthusiasts.
+
+Thank you for joining me on this journey. Together, let's explore the limitless possibilities of technology.
+
+Stay curious,  
+**Liam**
