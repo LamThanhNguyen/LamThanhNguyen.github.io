@@ -1,7 +1,10 @@
 title = 'Liam Blogs'
 baseURL = 'https://lamthanhnguyen.github.io/'
-theme = 'ananke'
+theme = ["github.com/theNewDynamic/gohugo-theme-ananke/v2"]
+
 languageCode = 'en-us'
+sectionPagesMenu = "main"
+enableRobotsTXT = true
 
 [pagination]
 pagerSize = 10
@@ -9,3 +12,10 @@ pagerSize = 10
 [params]
 favicon = "/images/favicon_logo.webp"
 recent_posts_number = 5
+
+[module]
+[[module.imports]]
+disable = false
+ignoreConfig = false
+ignoreImports = false
+path = 'github.com/theNewDynamic/gohugo-theme-ananke/v2'

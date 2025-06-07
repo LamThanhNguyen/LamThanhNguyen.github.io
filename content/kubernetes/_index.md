@@ -1,5 +1,5 @@
 ---
-title: "Life Language"
+title: "Kubernetes"
 menu:
   main:
     weight: 1
