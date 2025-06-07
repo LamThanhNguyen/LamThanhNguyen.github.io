@@ -3,7 +3,6 @@ baseURL = 'https://lamthanhnguyen.github.io/'
 theme = ["github.com/theNewDynamic/gohugo-theme-ananke/v2"]
 
 languageCode = 'en-us'
-sectionPagesMenu = "main"
 enableRobotsTXT = true
 
 [pagination]
