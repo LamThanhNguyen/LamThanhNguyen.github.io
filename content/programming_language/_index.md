@@ -4,4 +4,4 @@ menu:
   main:
     weight: 1
 ---
-Articles are paginated with only three posts here for example. You can set the number of entries to show on this page with the "pagination" setting in the config file.
+A programming language is a formal set of instructions used to produce various kinds of output through computer programs. It enables developers to communicate with machines, build software, and automate tasks. Learning different programming languages expands your ability to solve problems and create powerful applications.

@@ -4,4 +4,4 @@ menu:
   main:
     weight: 1
 ---
-Articles are paginated with only three posts here for example. You can set the number of entries to show on this page with the "pagination" setting in the config file.
+Kubernetes, or K8s, automates the deployment, scaling, and management of containerized applications. Originating from Google's internal systems, it simplifies complex container orchestration across environments. Kubernetes enhances reliability, scalability, and operational efficiency, essential for modern application infrastructure.

@@ -23,9 +23,6 @@
     <loc>http://localhost:1313/database/chapter-6/</loc>
     <lastmod>2017-04-14T11:25:05-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/kubernetes/chapter-6/</loc>
-    <lastmod>2017-04-14T11:25:05-04:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/programming_language/chapter-6/</loc>
     <lastmod>2017-04-14T11:25:05-04:00</lastmod>
   </url><url>
@@ -36,9 +33,6 @@
     <lastmod>2017-04-14T11:25:05-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2017-04-14T11:25:05-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/kubernetes/</loc>
     <lastmod>2017-04-14T11:25:05-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/programming_language/</loc>
@@ -59,9 +53,6 @@
     <loc>http://localhost:1313/database/chapter-5/</loc>
     <lastmod>2017-04-13T11:15:58-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/kubernetes/chapter-5/</loc>
-    <lastmod>2017-04-13T11:15:58-04:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/programming_language/chapter-5/</loc>
     <lastmod>2017-04-13T11:15:58-04:00</lastmod>
   </url><url>
@@ -78,9 +69,6 @@
     <lastmod>2017-04-12T11:14:48-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/database/chapter-4/</loc>
-    <lastmod>2017-04-12T11:14:48-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/kubernetes/chapter-4/</loc>
     <lastmod>2017-04-12T11:14:48-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/programming_language/chapter-4/</loc>
@@ -107,9 +95,6 @@
     <loc>http://localhost:1313/database/chapter-3/</loc>
     <lastmod>2017-04-11T11:13:32-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/kubernetes/chapter-3/</loc>
-    <lastmod>2017-04-11T11:13:32-04:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/programming_language/chapter-3/</loc>
     <lastmod>2017-04-11T11:13:32-04:00</lastmod>
   </url><url>
@@ -126,9 +111,6 @@
     <lastmod>2017-04-10T11:00:59-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/database/chapter-2/</loc>
-    <lastmod>2017-04-10T11:00:59-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/kubernetes/chapter-2/</loc>
     <lastmod>2017-04-10T11:00:59-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/programming_language/chapter-2/</loc>
@@ -156,6 +138,9 @@
     <lastmod>2017-04-09T10:58:08-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/technology/chapter-1/</loc>
+    <lastmod>2017-04-09T10:58:08-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/kubernetes/</loc>
     <lastmod>2017-04-09T10:58:08-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/about/</loc>
