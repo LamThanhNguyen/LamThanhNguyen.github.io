@@ -1,9 +1,9 @@
 ---
 date: 2025-06-08T10:58:08-04:00
-description: "Kubernetes"
+description: "Step-by-step guide to installing AWS CLI, kubectl, and eksctl on Ubuntu 22.04.3 LTS (WSL)."
 featured_image: "/images/install-aws-kubectl-eksctl-cli.png"
-tags: ["kubernetes"]
-title: "I. Install aws, kubeclt, eksclt CLIs"
+tags: ["kubernetes", "aws", "eks", "kubectl", "cli"]
+title: "I. Install AWS CLI, kubectl, and eksctl"
 ---
 
 Ubuntu 22.04.3 LTS - Windows Subsystem for Linux - AMD64
@@ -14,7 +14,7 @@ sudo snap install aws-cli --classic
 aws --version
 which aws
 ```
-Config aws account
+Configure AWS account
 ```bash
 aws configure
 AWS Access Key ID [None]: xxxxxxxxxxxx
@@ -32,10 +32,10 @@ aws ec2 describe-vpcs
 ## 2. Install kubectl CLI
 kubectl is the command-line interface (CLI) tool used to interact with Kubernetes clusters. It allows developers and operators to manage cluster resources, inspect states, deploy applications, and perform administrative tasks.
 
-kubectl acts as a client to the Kubernetes API server. It sends commands to the API server, which then carries out the requested actions on the cluster's components such as pods, deployments, services, etc.
+kubectl acts as a client to the Kubernetes API server, sending commands which are executed by the cluster to manage resources like pods, deployments, and services.
 
+I installed kubectl CLI by following the official [AWS documentation for setting up kubectl & eksctl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html#linux_amd64_kubectl/ "Visit aws setup kubectl & eksctl!"). Ensure you check this documentation to verify the latest version and download links.
 
-I'm install kubectl CLI following [aws setup kubectl & eksctl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html#linux_amd64_kubectl/ "Visit aws setup kubectl & eksctl!"). Please read the article to update the version and link download kubectl.
 ```bash
 curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.32.3/2025-04-17/bin/linux/amd64/kubectl
 chmod +x ./kubectl
@@ -82,13 +82,17 @@ which eksctl
 ```
 
 ## 4. Curious question
-Q: Why do we already have kubectl, and then we also have eksctl? Is it a duplicate feature?
+Q: Why do we already have `kubectl`, and then also have `eksctl`? Is it a duplicate feature?
 
 A:
-While kubectl and eksctl may seem similar because they both relate to Kubernetes and EKS, they serve very different purposes. They are not duplicates, but rather complementary tools in the EKS ecosystem.
-- eksctl: Provision and manage the EKS infrastructure itself (cluster, nodegroups, IAM roles, etc.)
-- kubectl: Interact with the Kubernetes cluster once it's already running (deploy apps, inspect pods, manage workloads)
+While `kubectl` and `eksctl` may seem similar because they both relate to Kubernetes and EKS, they serve very different purposes. They are not duplicates, but rather complementary tools within the EKS ecosystem:
 
-Imagine you're building a house:
-- eksctl is the construction crew: It lays the foundation, builds the walls, installs utilities — i.e., it sets up the cluster infrastructure.
-- kubectl is the interior decorator and operator: It arranges furniture, fixes appliances, manages daily operations — i.e., it controls and manages the workloads inside the Kubernetes cluster.
+**"`eksctl` manages infrastructure (clusters, node groups, IAM roles)."**
+
+**"`kubectl` manages workloads (pods, deployments, services) on a running Kubernetes cluster."**
+
+Analogy:
+
+**"`eksctl` is like the construction crew, building the infrastructure of your Kubernetes cluster."**
+
+**"`kubectl` is the interior decorator and maintenance staff, managing resources and workloads within the Kubernetes cluster."**

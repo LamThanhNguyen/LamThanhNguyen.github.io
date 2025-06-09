@@ -34,10 +34,10 @@
     
 
     
-      <link rel="canonical" href="http://localhost:1313/kubernetes/chapter-1/">
+      <link rel="canonical" href="http://localhost:1313/kubernetes/install-aws-kubectl-eksctl-on-ubuntu/">
     
 
-    <meta property="og:url" content="http://localhost:1313/kubernetes/chapter-1/">
+    <meta property="og:url" content="http://localhost:1313/kubernetes/install-aws-kubectl-eksctl-on-ubuntu/">
   <meta property="og:site_name" content="Liam Blogs">
   <meta property="og:title" content="I. Install AWS CLI, kubectl, and eksctl">
   <meta property="og:description" content="Step-by-step guide to installing AWS CLI, kubectl, and eksctl on Ubuntu 22.04.3 LTS (WSL).">
@@ -94,44 +94,8 @@
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="/ai/" title="AI page">
-              AI
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="/algorithm/" title="Algorithm page">
-              Algorithm
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="/aws/" title="AWS page">
-              AWS
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="/database/" title="Database page">
-              Database
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white white-90 no-underline" href="/kubernetes/" title="Kubernetes page">
               Kubernetes
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="/programming_language/" title="Programming Language page">
-              Programming Language
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="/technology/" title="Technology page">
-              Technology
             </a>
           </li>
           
@@ -228,14 +192,14 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>eksctl version
 </span></span><span style="display:flex;"><span>which eksctl
 </span></span></code></pre></div><h2 id="4-curious-question">4. Curious question</h2>
-<p>Q: Why do we already have kubectl, and then also have eksctl? Is it a duplicate feature?</p>
+<p>Q: Why do we already have <code>kubectl</code>, and then also have <code>eksctl</code>? Is it a duplicate feature?</p>
 <p>A:
-While kubectl and eksctl may seem similar because they both relate to Kubernetes and EKS, they serve very different purposes. They are not duplicates, but rather complementary tools within the EKS ecosystem:</p>
-<p>&ldquo;eksctl manages infrastructure (clusters, node groups, IAM roles).&rdquo;</p>
-<p>&ldquo;kubectl manages workloads (pods, deployments, services) on a running Kubernetes cluster.&rdquo;</p>
+While <code>kubectl</code> and <code>eksctl</code> may seem similar because they both relate to Kubernetes and EKS, they serve very different purposes. They are not duplicates, but rather complementary tools within the EKS ecosystem:</p>
+<p><strong>&quot;<code>eksctl</code> manages infrastructure (clusters, node groups, IAM roles).&quot;</strong></p>
+<p><strong>&quot;<code>kubectl</code> manages workloads (pods, deployments, services) on a running Kubernetes cluster.&quot;</strong></p>
 <p>Analogy:</p>
-<p>&ldquo;eksctl is like the construction crew, building the infrastructure of your Kubernetes cluster.&rdquo;</p>
-<p>&ldquo;kubectl is the interior decorator and maintenance staff, managing resources and workloads within the Kubernetes cluster.&rdquo;</p>
+<p><strong>&quot;<code>eksctl</code> is like the construction crew, building the infrastructure of your Kubernetes cluster.&quot;</strong></p>
+<p><strong>&quot;<code>kubectl</code> is the interior decorator and maintenance staff, managing resources and workloads within the Kubernetes cluster.&quot;</strong></p>
 <ul class="pa0">
   
    <li class="list di">
@@ -269,17 +233,6 @@ While kubectl and eksctl may seem similar because they both relate to Kubernetes
 
 
 
-
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">Related</p>
-    <ul class="pa0 list">
-	   
-	     <li  class="mb2">
-          <a href="/aws/chapter-1/">Chapter I: The Grand Hall</a>
-        </li>
-	    
-    </ul>
-</div>
 
 </aside>
 
