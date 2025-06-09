@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Chapter I: The Grand Hall | Liam Blogs</title>
+    <title>I. Install aws, kubeclt, eksclt CLIs | Liam Blogs</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="The Grand Hall">
+    <meta name="description" content="Kubernetes">
     <meta name="generator" content="Hugo 0.147.8">
     
     
@@ -39,23 +39,24 @@
 
     <meta property="og:url" content="http://localhost:1313/kubernetes/chapter-1/">
   <meta property="og:site_name" content="Liam Blogs">
-  <meta property="og:title" content="Chapter I: The Grand Hall">
-  <meta property="og:description" content="The Grand Hall">
+  <meta property="og:title" content="I. Install aws, kubeclt, eksclt CLIs">
+  <meta property="og:description" content="Kubernetes">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="kubernetes">
-    <meta property="article:published_time" content="2017-04-09T10:58:08-04:00">
-    <meta property="article:modified_time" content="2017-04-09T10:58:08-04:00">
-    <meta property="article:tag" content="Scene">
+    <meta property="article:published_time" content="2025-06-08T10:58:08-04:00">
+    <meta property="article:modified_time" content="2025-06-08T10:58:08-04:00">
+    <meta property="article:tag" content="Kubernetes">
 
-  <meta itemprop="name" content="Chapter I: The Grand Hall">
-  <meta itemprop="description" content="The Grand Hall">
-  <meta itemprop="datePublished" content="2017-04-09T10:58:08-04:00">
-  <meta itemprop="dateModified" content="2017-04-09T10:58:08-04:00">
-  <meta itemprop="keywords" content="Scene">
+  <meta itemprop="name" content="I. Install aws, kubeclt, eksclt CLIs">
+  <meta itemprop="description" content="Kubernetes">
+  <meta itemprop="datePublished" content="2025-06-08T10:58:08-04:00">
+  <meta itemprop="dateModified" content="2025-06-08T10:58:08-04:00">
+  <meta itemprop="wordCount" content="433">
+  <meta itemprop="keywords" content="Kubernetes">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Chapter I: The Grand Hall">
-  <meta name="twitter:description" content="The Grand Hall">
+  <meta name="twitter:title" content="I. Install aws, kubeclt, eksclt CLIs">
+  <meta name="twitter:description" content="Kubernetes">
 
 	
   </head><body class="ma0 avenir bg-near-white development">
@@ -67,7 +68,7 @@
   
   
   
-  <header class="cover bg-center" style="background-image: url('http://localhost:1313/images/Pope-Edouard-de-Beaumont-1844.jpg');">
+  <header class="cover bg-center" style="background-image: url('http://localhost:1313/images/install-aws-kubectl-eksctl-cli.png');">
     <div class="bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l center items-center justify-between">
@@ -140,10 +141,10 @@
 
       <div class="tc-l pv6 ph3 ph4-ns">
         
-          <div class="f2 f1-l fw2 white-90 mb0 lh-title">Chapter I: The Grand Hall</div>
+          <div class="f2 f1-l fw2 white-90 mb0 lh-title">I. Install aws, kubeclt, eksclt CLIs</div>
           
             <div class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
-              The Grand Hall
+              Kubernetes
             </div>
           
         
@@ -163,20 +164,82 @@
           
         Kubernetes
       </aside><div id="sharing" class="mt3 ananke-socials"></div>
-<h1 class="f1 athelas mt3 mb1">Chapter I: The Grand Hall</h1>
+<h1 class="f1 athelas mt3 mb1">I. Install aws, kubeclt, eksclt CLIs</h1>
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2017-04-09T10:58:08-04:00">April 9, 2017</time>
+      <time class="f6 mv4 dib tracked" datetime="2025-06-08T10:58:08-04:00">June 8, 2025</time>
       
 
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><ul class="pa0">
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Ubuntu 22.04.3 LTS - Windows Subsystem for Linux - AMD64</p>
+<h2 id="1-install--config-aws-cli">1. Install &amp; Config AWS CLI</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo snap install aws-cli --classic
+</span></span><span style="display:flex;"><span>aws --version
+</span></span><span style="display:flex;"><span>which aws
+</span></span></code></pre></div><p>Config aws account</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure
+</span></span><span style="display:flex;"><span>AWS Access Key ID <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: xxxxxxxxxxxx
+</span></span><span style="display:flex;"><span>AWS Secret Access Key <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: xxxxxxxxxxxxxxxx+xxxxxx
+</span></span><span style="display:flex;"><span>Default region name <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: ap-southeast-1
+</span></span><span style="display:flex;"><span>Default output format <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: json
+</span></span></code></pre></div><p>You can verify your aws account:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat ~/.aws/credentials
+</span></span><span style="display:flex;"><span>cat ~/.aws/config
+</span></span><span style="display:flex;"><span>aws ec2 describe-vpcs
+</span></span></code></pre></div><h2 id="2-install-kubectl-cli">2. Install kubectl CLI</h2>
+<p>kubectl is the command-line interface (CLI) tool used to interact with Kubernetes clusters. It allows developers and operators to manage cluster resources, inspect states, deploy applications, and perform administrative tasks.</p>
+<p>kubectl acts as a client to the Kubernetes API server. It sends commands to the API server, which then carries out the requested actions on the cluster&rsquo;s components such as pods, deployments, services, etc.</p>
+<p>I&rsquo;m install kubectl CLI following <a href="https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html#linux_amd64_kubectl/" title="Visit aws setup kubectl &amp; eksctl!">aws setup kubectl &amp; eksctl</a>. Please read the article to update the version and link download kubectl.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.32.3/2025-04-17/bin/linux/amd64/kubectl
+</span></span><span style="display:flex;"><span>chmod +x ./kubectl
+</span></span><span style="display:flex;"><span>mkdir -p $HOME/bin <span style="color:#f92672">&amp;&amp;</span> cp ./kubectl $HOME/bin/kubectl <span style="color:#f92672">&amp;&amp;</span> export PATH<span style="color:#f92672">=</span>$HOME/bin:$PATH
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;export PATH=$HOME/bin:$PATH&#39;</span> &gt;&gt; ~/.bashrc
+</span></span></code></pre></div><p>You can verify your kubectl:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl version --client
+</span></span><span style="display:flex;"><span>which kubectl
+</span></span></code></pre></div><p>Config kubectl to communicate with EKS server</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws eks update-kubeconfig --region region-code --name my-cluster
+</span></span><span style="display:flex;"><span>cat ~/.kube/config
+</span></span></code></pre></div><p>If you want manage multiple cluster and switch between contexts:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl config get-contexts
+</span></span><span style="display:flex;"><span>kubectl config use-context &lt;context-name&gt;
+</span></span><span style="display:flex;"><span>kubectl config rename-context arn:aws:eks:ap-southeast-1:111122223333:cluster/dev dev
+</span></span><span style="display:flex;"><span>kubectl config use-context dev
+</span></span><span style="display:flex;"><span>kubectl config set-context dev --namespace<span style="color:#f92672">=</span>my-namespace
+</span></span><span style="display:flex;"><span>kubectl config current-context
+</span></span><span style="display:flex;"><span>aws sts get-caller-identity
+</span></span></code></pre></div><h2 id="3-install-eksctl-cli">3. Install eksctl CLI</h2>
+<p>eksctl is a command-line interface (CLI) tool for creating and managing Amazon EKS (Elastic Kubernetes Service) clusters.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ARCH<span style="color:#f92672">=</span>amd64
+</span></span><span style="display:flex;"><span>PLATFORM<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span>_$ARCH
+</span></span><span style="display:flex;"><span>curl -sLO <span style="color:#e6db74">&#34;https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_</span>$PLATFORM<span style="color:#e6db74">.tar.gz&#34;</span>
+</span></span><span style="display:flex;"><span>tar -xzf eksctl_$PLATFORM.tar.gz -C /tmp <span style="color:#f92672">&amp;&amp;</span> rm eksctl_$PLATFORM.tar.gz
+</span></span><span style="display:flex;"><span>sudo mv /tmp/eksctl /usr/local/bin
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;. &lt;(eksctl completion bash)&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span>source ~/.bashrc
+</span></span></code></pre></div><p>You can verify your eksctl:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>eksctl version
+</span></span><span style="display:flex;"><span>which eksctl
+</span></span></code></pre></div><h2 id="4-curious-question">4. Curious question</h2>
+<p>Q: Why do we already have kubectl, and then we also have eksctl? Is it a duplicate feature?</p>
+<p>A:
+While kubectl and eksctl may seem similar because they both relate to Kubernetes and EKS, they serve very different purposes. They are not duplicates, but rather complementary tools in the EKS ecosystem.</p>
+<ul>
+<li>eksctl: Provision and manage the EKS infrastructure itself (cluster, nodegroups, IAM roles, etc.)</li>
+<li>kubectl: Interact with the Kubernetes cluster once it&rsquo;s already running (deploy apps, inspect pods, manage workloads)</li>
+</ul>
+<p>Imagine you&rsquo;re building a house:</p>
+<ul>
+<li>eksctl is the construction crew: It lays the foundation, builds the walls, installs utilities — i.e., it sets up the cluster infrastructure.</li>
+<li>kubectl is the interior decorator and operator: It arranges furniture, fixes appliances, manages daily operations — i.e., it controls and manages the workloads inside the Kubernetes cluster.</li>
+</ul>
+<ul class="pa0">
   
    <li class="list di">
-     <a href="/tags/scene/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Scene</a>
+     <a href="/tags/kubernetes/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Kubernetes</a>
    </li>
   
 </ul>
@@ -190,25 +253,6 @@
 
 
 
-
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">Related</p>
-    <ul class="pa0 list">
-	   
-	     <li  class="mb2">
-          <a href="/programming_language/chapter-1/">Chapter I: The Grand Hall</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/technology/chapter-1/">Chapter I: The Grand Hall</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="/aws/chapter-1/">Chapter I: The Grand Hall</a>
-        </li>
-	    
-    </ul>
-</div>
 
 </aside>
 

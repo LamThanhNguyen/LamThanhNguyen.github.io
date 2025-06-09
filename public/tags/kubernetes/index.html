@@ -33,26 +33,26 @@
 
     
     
-      <link href="/tags/programming-language/index.xml" rel="alternate" type="application/rss+xml" title="Liam Blogs" />
-      <link href="/tags/programming-language/index.xml" rel="feed" type="application/rss+xml" title="Liam Blogs" />
+      <link href="/tags/kubernetes/index.xml" rel="alternate" type="application/rss+xml" title="Liam Blogs" />
+      <link href="/tags/kubernetes/index.xml" rel="feed" type="application/rss+xml" title="Liam Blogs" />
       
     
 
     
-      <link rel="canonical" href="http://localhost:1313/tags/programming-language/">
+      <link rel="canonical" href="http://localhost:1313/tags/kubernetes/">
     
 
-    <meta property="og:url" content="http://localhost:1313/tags/programming-language/">
+    <meta property="og:url" content="http://localhost:1313/tags/kubernetes/">
   <meta property="og:site_name" content="Liam Blogs">
-  <meta property="og:title" content="Programming Language">
+  <meta property="og:title" content="Kubernetes">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Programming Language">
-  <meta itemprop="datePublished" content="2017-04-09T10:58:08-04:00">
-  <meta itemprop="dateModified" content="2017-04-09T10:58:08-04:00">
+  <meta itemprop="name" content="Kubernetes">
+  <meta itemprop="datePublished" content="2025-06-08T10:58:08-04:00">
+  <meta itemprop="dateModified" content="2025-06-08T10:58:08-04:00">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Programming Language">
+  <meta name="twitter:title" content="Kubernetes">
 
 	
   </head><body class="ma0 avenir bg-near-white development">
@@ -135,7 +135,7 @@
 
       <div class="tc-l pv4 pv6-l ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-          Programming Language
+          Kubernetes
         </h1>
         
       </div>
@@ -147,7 +147,7 @@
       
   <article class="cf pa3 pa4-m pa4-l">
     <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links mid-gray">
-      <p>Below you will find pages that utilize the taxonomy term “Programming Language”</p>
+      <p>Below you will find pages that utilize the taxonomy term “Kubernetes”</p>
     </div>
   </article>
   <div class="mw8 center">
@@ -156,16 +156,32 @@
         <div class="w-100 mb4 relative bg-white">
           <div class="w-100 mb4 nested-copy-line-height relative bg-white">
   <div class="mb3 pa4 gray overflow-hidden bg-white">
-    <span class="f6 db">Programming Language</span>
+    <span class="f6 db">Kubernetes</span>
     <h1 class="f3 near-black">
-      <a href="/programming_language/chapter-1/" class="link black dim">
-        Chapter I: The Grand Hall
+      <a href="/kubernetes/chapter-1/" class="link black dim">
+        I. Install aws, kubeclt, eksclt CLIs
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      
+      <p>Ubuntu 22.04.3 LTS - Windows Subsystem for Linux - AMD64</p>
+<h2 id="1-install--config-aws-cli">1. Install &amp; Config AWS CLI</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo snap install aws-cli --classic
+</span></span><span style="display:flex;"><span>aws --version
+</span></span><span style="display:flex;"><span>which aws
+</span></span></code></pre></div><p>Config aws account</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure
+</span></span><span style="display:flex;"><span>AWS Access Key ID <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: xxxxxxxxxxxx
+</span></span><span style="display:flex;"><span>AWS Secret Access Key <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: xxxxxxxxxxxxxxxx+xxxxxx
+</span></span><span style="display:flex;"><span>Default region name <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: ap-southeast-1
+</span></span><span style="display:flex;"><span>Default output format <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: json
+</span></span></code></pre></div><p>You can verify your aws account:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat ~/.aws/credentials
+</span></span><span style="display:flex;"><span>cat ~/.aws/config
+</span></span><span style="display:flex;"><span>aws ec2 describe-vpcs
+</span></span></code></pre></div><h2 id="2-install-kubectl-cli">2. Install kubectl CLI</h2>
+<p>kubectl is the command-line interface (CLI) tool used to interact with Kubernetes clusters. It allows developers and operators to manage cluster resources, inspect states, deploy applications, and perform administrative tasks.</p>
     </div>
-    <a href="/programming_language/chapter-1/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+    <a href="/kubernetes/chapter-1/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
   </div>
 </div>
 
