@@ -12,6 +12,19 @@ pagerSize = 10
 favicon = "/images/favicon_logo.webp"
 recent_posts_number = 5
 
+[params.ananke.social.share]
+networks = [
+  "linkedin"
+]
+
+[params.ananke.social.follow]
+networks = [
+  "linkedin"
+]
+
+[params.ananke.social.linkedin]
+username = "lam-thanh-nguyen-abcd6789"
+
 [module]
 [[module.imports]]
 disable = false

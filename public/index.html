@@ -101,7 +101,14 @@
           
         </ul>
       
-      <div class="ananke-socials"></div>
+      <div class="ananke-socials"><a href="http://linkedin.com/in/lam-thanh-nguyen-abcd6789" target="_blank" rel="noopener"
+        class="ananke-social-link link-transition linkedin link dib z-999 pt3 pt0-l mr1"
+        title="follow on LinkedIn - Opens in a new window"
+        aria-label="follow on LinkedIn - Opens in a new window">
+      <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+            
+          </span></a></div>
 
     </div>
   </div>
@@ -149,37 +156,25 @@
       
           
         <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="/kubernetes/install-aws-kubectl-eksctl-on-ubuntu/" class="db grow">
-            <img src="http://localhost:1313/images/install-aws-kubectl-eksctl-cli.png" class="img" alt="image from I. Install AWS CLI, kubectl, and eksctl">
+          <a href="/aws/install-aws-kubectl-eksctl-on-ubuntu/" class="db grow">
+            <img src="http://localhost:1313/images/auto-build-push-docker-to-aws-ecr-github-actions.png" class="img" alt="image from I. Auto build &amp; push Docker Image to AWS ECR with Github Actions">
           </a>
         </div>
       
       <div class="blah w-100 w-60-ns pl3-ns">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/kubernetes/install-aws-kubectl-eksctl-on-ubuntu/" class="color-inherit dim link">
-            I. Install AWS CLI, kubectl, and eksctl
+          <a href="/aws/install-aws-kubectl-eksctl-on-ubuntu/" class="color-inherit dim link">
+            I. Auto build &amp; push Docker Image to AWS ECR with Github Actions
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
           <p>Ubuntu 22.04.3 LTS - Windows Subsystem for Linux - AMD64</p>
-<h2 id="1-install--config-aws-cli">1. Install &amp; Config AWS CLI</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo snap install aws-cli --classic
-</span></span><span style="display:flex;"><span>aws --version
-</span></span><span style="display:flex;"><span>which aws
-</span></span></code></pre></div><p>Configure AWS account</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure
-</span></span><span style="display:flex;"><span>AWS Access Key ID <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: xxxxxxxxxxxx
-</span></span><span style="display:flex;"><span>AWS Secret Access Key <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: xxxxxxxxxxxxxxxx+xxxxxx
-</span></span><span style="display:flex;"><span>Default region name <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: ap-southeast-1
-</span></span><span style="display:flex;"><span>Default output format <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: json
-</span></span></code></pre></div><p>You can verify your aws account:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat ~/.aws/credentials
-</span></span><span style="display:flex;"><span>cat ~/.aws/config
-</span></span><span style="display:flex;"><span>aws ec2 describe-vpcs
-</span></span></code></pre></div><h2 id="2-install-kubectl-cli">2. Install kubectl CLI</h2>
-<p>kubectl is the command-line interface (CLI) tool used to interact with Kubernetes clusters. It allows developers and operators to manage cluster resources, inspect states, deploy applications, and perform administrative tasks.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Automating the build and deployment of Docker images using GitHub Actions and AWS Elastic Container Registry (ECR) significantly streamlines your software delivery process.</p>
+<p>By integrating these powerful tools, developers benefit from reduced manual intervention, minimized errors, and accelerated deployment cycles.</p>
+<p>GitHub Actions automates your build workflow whenever code changes, while AWS ECR securely stores and manages your container images, ensuring reliability and scalability.</p>
         </div>
-        <a href="/kubernetes/install-aws-kubectl-eksctl-on-ubuntu/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        <a href="/aws/install-aws-kubectl-eksctl-on-ubuntu/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
       </div>
     </div>
   </div>
@@ -200,7 +195,14 @@
   <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
     &copy;  Liam Blogs 2025 
   </a>
-    <div><div class="ananke-socials"></div>
+    <div><div class="ananke-socials"><a href="http://linkedin.com/in/lam-thanh-nguyen-abcd6789" target="_blank" rel="noopener"
+        class="ananke-social-link link-transition linkedin link dib z-999 pt3 pt0-l mr1"
+        title="follow on LinkedIn - Opens in a new window"
+        aria-label="follow on LinkedIn - Opens in a new window">
+      <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+            
+          </span></a></div>
 </div>
   </div>
 </footer>
