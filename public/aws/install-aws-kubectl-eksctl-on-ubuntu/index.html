@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>I. Auto build &amp; push Docker Image to AWS ECR with Github Actions | Liam Blogs</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Ubuntu 22.04.3 LTS - Windows Subsystem for Linux - AMD64
+Introduction
+Automating the build and deployment of Docker images using GitHub Actions and AWS Elastic Container Registry (ECR) significantly streamlines your software delivery process.
+By integrating these powerful tools, developers benefit from reduced manual intervention, minimized errors, and accelerated deployment cycles.
+GitHub Actions automates your build workflow whenever code changes, while AWS ECR securely stores and manages your container images, ensuring reliability and scalability.">
+    <meta name="generator" content="Hugo 0.147.8">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+
+
+    
+      
+<link rel="shortcut icon" href="/images/favicon_logo.webp" type="image/x-icon" />
+
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/aws/install-aws-kubectl-eksctl-on-ubuntu/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/aws/install-aws-kubectl-eksctl-on-ubuntu/">
+  <meta property="og:site_name" content="Liam Blogs">
+  <meta property="og:title" content="I. Auto build & push Docker Image to AWS ECR with Github Actions">
+  <meta property="og:description" content="Ubuntu 22.04.3 LTS - Windows Subsystem for Linux - AMD64
+Introduction Automating the build and deployment of Docker images using GitHub Actions and AWS Elastic Container Registry (ECR) significantly streamlines your software delivery process.
+By integrating these powerful tools, developers benefit from reduced manual intervention, minimized errors, and accelerated deployment cycles.
+GitHub Actions automates your build workflow whenever code changes, while AWS ECR securely stores and manages your container images, ensuring reliability and scalability.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="aws">
+    <meta property="article:published_time" content="2025-06-10T10:58:08-04:00">
+    <meta property="article:modified_time" content="2025-06-10T10:58:08-04:00">
+    <meta property="article:tag" content="Aws">
+    <meta property="article:tag" content="Github-Actions">
+    <meta property="article:tag" content="Ecr">
+    <meta property="article:tag" content="Docker">
+
+  <meta itemprop="name" content="I. Auto build & push Docker Image to AWS ECR with Github Actions">
+  <meta itemprop="description" content="Ubuntu 22.04.3 LTS - Windows Subsystem for Linux - AMD64
+Introduction Automating the build and deployment of Docker images using GitHub Actions and AWS Elastic Container Registry (ECR) significantly streamlines your software delivery process.
+By integrating these powerful tools, developers benefit from reduced manual intervention, minimized errors, and accelerated deployment cycles.
+GitHub Actions automates your build workflow whenever code changes, while AWS ECR securely stores and manages your container images, ensuring reliability and scalability.">
+  <meta itemprop="datePublished" content="2025-06-10T10:58:08-04:00">
+  <meta itemprop="dateModified" content="2025-06-10T10:58:08-04:00">
+  <meta itemprop="wordCount" content="346">
+  <meta itemprop="keywords" content="Aws,Github-Actions,Ecr,Docker">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="I. Auto build & push Docker Image to AWS ECR with Github Actions">
+  <meta name="twitter:description" content="Ubuntu 22.04.3 LTS - Windows Subsystem for Linux - AMD64
+Introduction Automating the build and deployment of Docker images using GitHub Actions and AWS Elastic Container Registry (ECR) significantly streamlines your software delivery process.
+By integrating these powerful tools, developers benefit from reduced manual intervention, minimized errors, and accelerated deployment cycles.
+GitHub Actions automates your build workflow whenever code changes, while AWS ECR securely stores and manages your container images, ensuring reliability and scalability.">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+   
+  
+
+  
+  
+  
+  <header class="cover bg-center" style="background-image: url('http://localhost:1313/images/auto-build-push-docker-to-aws-ecr-github-actions.png');">
+    <div class="bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Liam Blogs
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/aws/" title="AWS page">
+              AWS
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/kubernetes/" title="Kubernetes page">
+              Kubernetes
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <div class="f2 f1-l fw2 white-90 mb0 lh-title">I. Auto build &amp; push Docker Image to AWS ECR with Github Actions</div>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        AWS
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">I. Auto build &amp; push Docker Image to AWS ECR with Github Actions</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-06-10T10:58:08-04:00">June 10, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Ubuntu 22.04.3 LTS - Windows Subsystem for Linux - AMD64</p>
+<h2 id="introduction">Introduction</h2>
+<p>Automating the build and deployment of Docker images using GitHub Actions and AWS Elastic Container Registry (ECR) significantly streamlines your software delivery process.</p>
+<p>By integrating these powerful tools, developers benefit from reduced manual intervention, minimized errors, and accelerated deployment cycles.</p>
+<p>GitHub Actions automates your build workflow whenever code changes, while AWS ECR securely stores and manages your container images, ensuring reliability and scalability.</p>
+<p>In this guide, you&rsquo;ll learn step-by-step how to effortlessly set up continuous integration and continuous deployment (CI/CD) to AWS ECR, maximizing your development efficiency.</p>
+<h2 id="1-create-ecr-repository">1. Create ECR Repository</h2>
+<ul>
+<li>Create simple ECR repository via AWS Console
+<ul>
+<li>Repository Name: banking-system</li>
+<li>Image tag mutability: Immutable</li>
+<li>Encryption configuration: AES-256</li>
+<li>Scan on push: Enable</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-setting-up-github-actions-oidc-authentication-with-aws">2. Setting up GitHub Actions OIDC authentication with AWS</h2>
+<ul>
+<li>
+<p>Add GitHub as an OIDC Identity Provider in AWS</p>
+<ul>
+<li>Open the AWS IAM Console: AWS IAM Console =&gt; Identity providers =&gt; Add provider</li>
+<li>Provider Type: OIDC</li>
+<li>Provider URL: <a href="https://token.actions.githubusercontent.com">https://token.actions.githubusercontent.com</a></li>
+<li>Audience: sts.amazonaws.com</li>
+</ul>
+</li>
+<li>
+<p>Create an IAM Role for GitHub Actions</p>
+<ul>
+<li>AWS IAM Console =&gt; Create role</li>
+<li>Trusted entity type: Web identity</li>
+<li>Identity provider: token.actions.githubusercontent.com</li>
+<li>Audience: sts.amazonaws.com</li>
+<li>GitHub organization: {{Your Github username or organization}}</li>
+<li>Add permissions:
+<ul>
+<li>AmazonEC2ContainerRegistryFullAccess</li>
+<li>SecretsManagerReadWrite</li>
+</ul>
+</li>
+<li>Role name: github-actions-deploy-role</li>
+</ul>
+</li>
+<li>
+<p>After create the role successfull, please go inside the role and note the ARN of role.</p>
+</li>
+<li>
+<p>In your Github repository =&gt; Settings =&gt; Secrets and variables =&gt; Actions:</p>
+<ul>
+<li>New repository secret</li>
+<li>Name: STAGING_GITHUB_ACTION_DEPLOY_ROLE</li>
+<li>Secret: ARN of AWS Role &ldquo;github-actions-deploy-role&rdquo; just created</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-github-actions-pipleline">3. GitHub Actions pipleline</h2>
+<p>.github/workflows/deploy-staging.yaml</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy to staging</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">branches</span>: [<span style="color:#ae81ff">staging]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">permissions</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">id-token</span>: <span style="color:#ae81ff">write    </span> <span style="color:#75715e"># &lt;--- REQUIRED for OIDC to work</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">contents</span>: <span style="color:#ae81ff">read</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deploy</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build image</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout repo</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Configure AWS credentials</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">aws-actions/configure-aws-credentials@v4</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">role-to-assume</span>: <span style="color:#ae81ff">${{ secrets.STAGING_GITHUB_ACTION_DEPLOY_ROLE }}</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">aws-region</span>: <span style="color:#ae81ff">ap-southeast-1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Login to Amazon ECR</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">id</span>: <span style="color:#ae81ff">login-ecr</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">aws-actions/amazon-ecr-login@v2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build, tag, and push image to Amazon ECR</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">ECR_REGISTRY</span>: <span style="color:#ae81ff">${{ steps.login-ecr.outputs.registry }}</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">ECR_REPOSITORY</span>: <span style="color:#ae81ff">banking-system</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">IMAGE_TAG</span>: <span style="color:#ae81ff">${{ github.sha }}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          docker build \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            -f Dockerfile.deploy \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            --build-arg ENVIRONMENT=staging \
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG</span>
+</span></span></code></pre></div><h2 id="enjoy-the-results-">Enjoy the results. ^^.</h2>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/aws/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Aws</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/github-actions/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Github-Actions</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/ecr/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Ecr</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/docker/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Docker</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/kubernetes/install-aws-kubectl-eksctl-on-ubuntu/">I. Install AWS CLI, kubectl, and eksctl</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+    &copy;  Liam Blogs 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
