@@ -1,12 +1,10 @@
 ---
 date: 2025-06-10T10:58:08-04:00
-description: ""
+description: "Auto build & push Docker Image to AWS ECR with Github Actions"
 featured_image: "/images/auto-build-push-docker-to-aws-ecr-github-actions.png"
 tags: ["aws", "github-actions", "ecr", "docker"]
 title: "I. Auto build & push Docker Image to AWS ECR with Github Actions"
 ---
-
-Ubuntu 22.04.3 LTS - Windows Subsystem for Linux - AMD64
 
 ## Introduction
 Automating the build and deployment of Docker images using GitHub Actions and AWS Elastic Container Registry (ECR) significantly streamlines your software delivery process. 
