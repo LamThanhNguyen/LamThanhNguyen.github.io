@@ -10,10 +10,10 @@
     <atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>I. Auto build &amp; push Docker Image to AWS ECR with Github Actions</title>
-      <link>http://localhost:1313/aws/install-aws-kubectl-eksctl-on-ubuntu/</link>
+      <link>http://localhost:1313/aws/ci-docker-to-aws-ecr-with-github-actions/</link>
       <pubDate>Tue, 10 Jun 2025 10:58:08 -0400</pubDate>
-      <guid>http://localhost:1313/aws/install-aws-kubectl-eksctl-on-ubuntu/</guid>
-      <description>&lt;p&gt;Ubuntu 22.04.3 LTS - Windows Subsystem for Linux - AMD64&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Automating the build and deployment of Docker images using GitHub Actions and AWS Elastic Container Registry (ECR) significantly streamlines your software delivery process.&lt;/p&gt;&#xA;&lt;p&gt;By integrating these powerful tools, developers benefit from reduced manual intervention, minimized errors, and accelerated deployment cycles.&lt;/p&gt;&#xA;&lt;p&gt;GitHub Actions automates your build workflow whenever code changes, while AWS ECR securely stores and manages your container images, ensuring reliability and scalability.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/aws/ci-docker-to-aws-ecr-with-github-actions/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Automating the build and deployment of Docker images using GitHub Actions and AWS Elastic Container Registry (ECR) significantly streamlines your software delivery process.&lt;/p&gt;&#xA;&lt;p&gt;By integrating these powerful tools, developers benefit from reduced manual intervention, minimized errors, and accelerated deployment cycles.&lt;/p&gt;&#xA;&lt;p&gt;GitHub Actions automates your build workflow whenever code changes, while AWS ECR securely stores and manages your container images, ensuring reliability and scalability.&lt;/p&gt;&#xA;&lt;p&gt;In this guide, you&amp;rsquo;ll learn step-by-step how to effortlessly set up continuous integration and continuous deployment (CI/CD) to AWS ECR, maximizing your development efficiency.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

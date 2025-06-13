@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>II. Understanding Kubernetes Service Types &amp; Ingress | Liam Blogs</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Understanding Kubernetes Service Types &amp; Ingress">
+    <meta name="generator" content="Hugo 0.147.8">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+
+
+    
+      
+<link rel="shortcut icon" href="/images/favicon_logo.webp" type="image/x-icon" />
+
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/kubernetes/kubernetes-service-types-and-ingress/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/kubernetes/kubernetes-service-types-and-ingress/">
+  <meta property="og:site_name" content="Liam Blogs">
+  <meta property="og:title" content="II. Understanding Kubernetes Service Types & Ingress">
+  <meta property="og:description" content="Understanding Kubernetes Service Types &amp; Ingress">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="kubernetes">
+    <meta property="article:published_time" content="2025-06-12T10:58:08-04:00">
+    <meta property="article:modified_time" content="2025-06-12T10:58:08-04:00">
+    <meta property="article:tag" content="Kubernetes">
+    <meta property="article:tag" content="Aws">
+    <meta property="article:tag" content="Load Balancer">
+    <meta property="article:tag" content="Service Type">
+    <meta property="article:tag" content="Ingress">
+
+  <meta itemprop="name" content="II. Understanding Kubernetes Service Types & Ingress">
+  <meta itemprop="description" content="Understanding Kubernetes Service Types &amp; Ingress">
+  <meta itemprop="datePublished" content="2025-06-12T10:58:08-04:00">
+  <meta itemprop="dateModified" content="2025-06-12T10:58:08-04:00">
+  <meta itemprop="wordCount" content="512">
+  <meta itemprop="keywords" content="Kubernetes,Aws,Load Balancer,Service Type,Ingress">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="II. Understanding Kubernetes Service Types & Ingress">
+  <meta name="twitter:description" content="Understanding Kubernetes Service Types &amp; Ingress">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+   
+  
+
+  
+  
+  
+  <header class="cover bg-center" style="background-image: url('http://localhost:1313/images/k8s-service-types-and-ingress.png');">
+    <div class="bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Liam Blogs
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/aws/" title="AWS page">
+              AWS
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/kubernetes/" title="Kubernetes page">
+              Kubernetes
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"><a href="http://linkedin.com/in/lam-thanh-nguyen-abcd6789" target="_blank" rel="noopener"
+        class="ananke-social-link link-transition linkedin link dib z-999 pt3 pt0-l mr1"
+        title="follow on LinkedIn - Opens in a new window"
+        aria-label="follow on LinkedIn - Opens in a new window">
+      <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+            
+          </span></a></div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <div class="f2 f1-l fw2 white-90 mb0 lh-title">II. Understanding Kubernetes Service Types &amp; Ingress</div>
+          
+            <div class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Understanding Kubernetes Service Types &amp; Ingress
+            </div>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Kubernetes
+      </aside><div id="sharing" class="mt3 ananke-socials"><a href="https://www.linkedin.com/shareArticle?&amp;mini=true&amp;source=http%3A%2F%2Flocalhost%3A1313%2Fkubernetes%2Fkubernetes-service-types-and-ingress%2F&amp;summary=1.&#43;Introduction&#43;Why&#43;exposing&#43;services&#43;matters&#43;in&#43;Kubernetes%3A%0AYour&#43;workloads&#43;are&#43;useless&#43;if&#43;no&#43;one&#43;can&#43;reach&#43;them.&#43;Service&#43;abstraction&#43;lets&#43;you&#43;decouple&#43;pod&#43;lifecycles&#43;from&#43;stable&#43;endpoints.&#43;Overview&#43;of&#43;Service&#43;types&#43;vs.&#43;Ingress%3A%0AServices&#43;give&#43;every&#43;workload&#43;an&#43;IP%3B&#43;Ingress&#43;turns&#43;a&#43;set&#43;of&#43;Services&#43;into&#43;a&#43;coherent%2C&#43;externally&#43;reachable&#43;API&#43;surface.&#43;2.&#43;Kubernetes&#43;Service&#43;Types&#43;Explained&#43;a.&#43;ClusterIP&#43;-&#43;Exposes&#43;the&#43;Service&#43;on&#43;a&#43;cluster-internal&#43;IP&#43;-&#43;Accessible&#43;%2A%2Aonly&#43;inside%2A%2A&#43;the&#43;cluster&#43;-&#43;Typical&#43;use%3A&#43;-&#43;Internal-only&#43;services&#43;-&#43;Microservices&#43;talking&#43;to&#43;each&#43;other&#43;b.&#43;NodePort&#43;-&#43;Exposes&#43;the&#43;Service&#43;on&#43;each&#43;node%E2%80%99s&#43;IP&#43;at&#43;a&#43;static&#43;port&#43;%28the&#43;NodePort%29&#43;-&#43;Accessible&#43;from&#43;outside&#43;the&#43;cluster%3A&#43;same&#43;VPC&#43;or&#43;the&#43;internet&#43;%28depending&#43;on&#43;firewall%2FSecurity&#43;Group&#43;rules%29&#43;-&#43;Reachable&#43;via&#43;%2A%2ANodeIP%3ANodePort%2A%2A&#43;%28port&#43;range&#43;30000&#43;-&#43;32767%29&#43;-&#43;Typical&#43;use%3A&#43;-&#43;Simple&#43;setups%2C&#43;debugging%2C&#43;or&#43;in&#43;environments&#43;without&#43;cloud&#43;LBs.&#43;-&#43;Quick&#43;test&#43;or&#43;direct&#43;access%2C&#43;not&#43;recommended&#43;for&#43;production&#43;internet-facing&#43;apps.&#43;c.&#43;LoadBalancer&#43;-&#43;Creates&#43;a&#43;cloud&#43;load&#43;balancer&#43;%28cloud&#43;provider&#43;integration%2C&#43;e.g.%2C&#43;AWS&#43;ALB%29.&#43;-&#43;Assigns&#43;a&#43;public&#43;IP&#43;and&#43;routes&#43;traffic&#43;to&#43;your&#43;Service.&#43;-&#43;Accessible&#43;from&#43;the&#43;internet.&#43;-&#43;Typical&#43;use%3A&#43;exposing&#43;production&#43;workloads&#43;to&#43;the&#43;internet&#43;%28websites%2C&#43;APIs%29.&#43;d.&#43;ExternalName&#43;-&#43;Maps&#43;the&#43;Service&#43;to&#43;an&#43;external&#43;DNS&#43;name.&#43;-&#43;Used&#43;for&#43;routing&#43;cluster&#43;traffic&#43;to&#43;resources&#43;outside&#43;Kubernetes.&#43;-&#43;Not&#43;used&#43;for&#43;exposing&#43;services&#43;to&#43;the&#43;internet.&#43;-&#43;Typical&#43;use%3A&#43;referencing&#43;services&#43;outside&#43;the&#43;cluster&#43;by&#43;DNS&#43;name%28database%2CSaaS&#43;endpoints%29.&#43;3.&#43;Ingress&#43;Ingress&#43;is&#43;a&#43;Kubernetes&#43;resource&#43;that&#43;manages&#43;external&#43;HTTP%2FHTTPS&#43;traffic&#43;Receives&#43;incoming&#43;requests&#43;from&#43;outside&#43;the&#43;cluster&#43;Routes&#43;them&#43;to&#43;the&#43;right&#43;Service&#43;based&#43;on&#43;rules&#43;%28URL&#43;path%2C&#43;host%2C&#43;headers%E2%80%A6%29&#43;Typical&#43;flow%3A&#43;User&#43;%E2%86%92&#43;ALB%2FNLB%2FNGINX&#43;%28provisioned&#43;by&#43;the&#43;Ingress&#43;Controller%29&#43;%E2%86%92&#43;Service&#43;%E2%86%92&#43;Pods.&#43;Ingress&#43;Controller%3A&#43;A&#43;pod%2Fdeployment&#43;running&#43;inside&#43;your&#43;cluster&#43;monitors&#43;your&#43;Ingress&#43;resources.&#43;configures&#43;and&#43;manages&#43;actual&#43;routing&#43;rules&#43;on&#43;a&#43;cloud&#43;load&#43;balancer&#43;Ingress&#43;Class%3A&#43;a&#43;way&#43;to&#43;specify&#43;which&#43;Ingress&#43;Controller&#43;is&#43;responsible&#43;for&#43;handling&#43;a&#43;particular&#43;Ingress&#43;resource&#43;4.&#43;Curious&#43;question&#43;Q%3A&#43;Why&#43;Do&#43;You&#43;Need&#43;Ingress%3F&#43;A%3A&#43;Without&#43;Ingress%2C&#43;to&#43;expose&#43;multiple&#43;applications&#43;or&#43;services&#43;externally%2C&#43;you&#43;would&#43;need&#43;many&#43;individual&#43;LoadBalancer&#43;services%2C&#43;which&#43;becomes&#43;expensive&#43;and&#43;complex&#43;quickly.%0A&amp;title=II.&#43;Understanding&#43;Kubernetes&#43;Service&#43;Types&#43;%26amp%3B&#43;Ingress&amp;url=http%3A%2F%2Flocalhost%3A1313%2Fkubernetes%2Fkubernetes-service-types-and-ingress%2F"
+        class="ananke-social-link linkedin no-underline"
+        title="Share on LinkedIn" aria-label="Share on LinkedIn"
+        target="_blank" rel="nofollow noopener noreferrer">
+        <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                
+              </span></a></div>
+<h1 class="f1 athelas mt3 mb1">II. Understanding Kubernetes Service Types &amp; Ingress</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-06-12T10:58:08-04:00">June 12, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="1-introduction">1. Introduction</h2>
+<ul>
+<li>
+<p><strong>Why exposing services matters in Kubernetes</strong>:</p>
+<ul>
+<li>Your workloads are useless if no one can reach them. Service abstraction lets you decouple pod lifecycles from stable endpoints.</li>
+</ul>
+</li>
+<li>
+<p>Overview of Service types vs. Ingress:</p>
+<ul>
+<li>Services give every workload an IP; Ingress turns a set of Services into a coherent, externally reachable API surface.</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-kubernetes-service-types-explained">2. Kubernetes Service Types Explained</h2>
+<h3 id="a-clusterip">a. ClusterIP</h3>
+<pre><code>- Exposes the Service on a cluster-internal IP
+- Accessible **only inside** the cluster
+- Typical use: 
+    - Internal-only services 
+    - Microservices talking to each other
+</code></pre>
+<h3 id="b-nodeport">b. NodePort</h3>
+<pre><code>- Exposes the Service on each node’s IP at a static port (the NodePort)
+- Accessible from outside the cluster: same VPC or the internet (depending on firewall/Security Group rules)
+- Reachable via **NodeIP:NodePort** (port range 30000 - 32767)
+- Typical use:
+    - Simple setups, debugging, or in environments without cloud LBs. 
+    - Quick test or direct access, not recommended for production internet-facing apps.
+</code></pre>
+<h3 id="c-loadbalancer">c. LoadBalancer</h3>
+<pre><code>- Creates a cloud load balancer (cloud provider integration, e.g., AWS ALB).
+- Assigns a public IP and routes traffic to your Service.
+- Accessible from the internet.
+- Typical use: exposing production workloads to the internet (websites, APIs).
+</code></pre>
+<h3 id="d-externalname">d. ExternalName</h3>
+<pre><code>- Maps the Service to an external DNS name.
+- Used for routing cluster traffic to resources outside Kubernetes.
+- Not used for exposing services to the internet.
+- Typical use: referencing services outside the cluster by DNS name(database,SaaS endpoints).
+</code></pre>
+<h2 id="3-ingress">3. Ingress</h2>
+<ul>
+<li>Ingress is a Kubernetes resource that manages external HTTP/HTTPS traffic
+<ul>
+<li>Receives incoming requests from outside the cluster</li>
+<li>Routes them to the right Service based on rules (URL path, host, headers…)</li>
+</ul>
+</li>
+<li>Typical flow: User → ALB/NLB/NGINX (provisioned by the Ingress Controller) → Service → Pods.</li>
+<li>Ingress Controller:
+<ul>
+<li>A pod/deployment running inside your cluster</li>
+<li>monitors your Ingress resources.</li>
+<li>configures and manages actual routing rules on a cloud load balancer</li>
+</ul>
+</li>
+<li>Ingress Class:
+<ul>
+<li>a way to specify which Ingress Controller is responsible for handling a particular Ingress resource</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-curious-question">4. Curious question</h2>
+<p>Q: Why Do You Need Ingress?
+A: Without Ingress, to expose multiple applications or services externally, you would need many individual LoadBalancer services, which becomes expensive and complex quickly.</p>
+<p>Ingress provides a unified, cost-effective way to expose multiple services through a single entry point.</p>
+<p>Q: What is the benefits of using Ingress?
+A:
+- Cost Efficiency: One load balancer, multiple services.
+- Centralized Management: Manage routing rules in a single place.
+- Advanced HTTP Routing: URL/host-based routing, SSL termination, header-based routing.
+- Scalability: Easily manage large-scale applications.</p>
+<p>Q: When to Use Ingress?
+A:
+- You have multiple services to expose externally.
+- You require advanced HTTP routing features (like SSL termination, URL path-based routing, etc.).
+- You aim to optimize costs and simplify networking.</p>
+<p>Q: Why do we already have <code>LoadBalancer</code> service then we have <code>Ingress + ALB</code>?</p>
+<p>A:
+- A LoadBalancer Service provisions one dedicated cloud load balancer per Service—perfect for a single workload but costly at scale.
+- In short, use LoadBalancer for quick, single‑service exposure or non‑HTTP protocols; use Ingress + ALB when you need to expose many HTTP services efficiently with advanced routing features.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/kubernetes/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Kubernetes</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/aws/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Aws</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/load-balancer/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Load Balancer</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/service-type/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Service Type</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/ingress/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Ingress</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/kubernetes/install-aws-kubectl-eksctl-on-ubuntu/">I. Install AWS CLI, kubectl, and eksctl</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/aws/ci-docker-to-aws-ecr-with-github-actions/">I. Auto build &amp; push Docker Image to AWS ECR with Github Actions</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+    &copy;  Liam Blogs 2025 
+  </a>
+    <div><div class="ananke-socials"><a href="http://linkedin.com/in/lam-thanh-nguyen-abcd6789" target="_blank" rel="noopener"
+        class="ananke-social-link link-transition linkedin link dib z-999 pt3 pt0-l mr1"
+        title="follow on LinkedIn - Opens in a new window"
+        aria-label="follow on LinkedIn - Opens in a new window">
+      <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+            
+          </span></a></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

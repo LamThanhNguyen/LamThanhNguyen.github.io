@@ -51,8 +51,8 @@
 
   <meta itemprop="name" content="Kubernetes">
   <meta itemprop="description" content="Kubernetes, or K8s, automates the deployment, scaling, and management of containerized applications. Originating from Google’s internal systems, it simplifies complex container orchestration across environments. Kubernetes enhances reliability, scalability, and operational efficiency, essential for modern application infrastructure.">
-  <meta itemprop="datePublished" content="2025-06-08T10:58:08-04:00">
-  <meta itemprop="dateModified" content="2025-06-08T10:58:08-04:00">
+  <meta itemprop="datePublished" content="2025-06-12T10:58:08-04:00">
+  <meta itemprop="dateModified" content="2025-06-12T10:58:08-04:00">
   <meta itemprop="wordCount" content="36">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Kubernetes">
@@ -130,6 +130,91 @@
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray"><p>Kubernetes, or K8s, automates the deployment, scaling, and management of containerized applications. Originating from Google&rsquo;s internal systems, it simplifies complex container orchestration across environments. Kubernetes enhances reliability, scalability, and operational efficiency, essential for modern application infrastructure.</p>
 </section>
     <section class="flex-ns mt5 flex-wrap justify-around">
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Kubernetes</span>
+    <h1 class="f3 near-black">
+      <a href="/kubernetes/kubernetes-service-types-and-ingress/" class="link black dim">
+        II. Understanding Kubernetes Service Types &amp; Ingress
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h2 id="1-introduction">1. Introduction</h2>
+<ul>
+<li>
+<p><strong>Why exposing services matters in Kubernetes</strong>:</p>
+<ul>
+<li>Your workloads are useless if no one can reach them. Service abstraction lets you decouple pod lifecycles from stable endpoints.</li>
+</ul>
+</li>
+<li>
+<p>Overview of Service types vs. Ingress:</p>
+<ul>
+<li>Services give every workload an IP; Ingress turns a set of Services into a coherent, externally reachable API surface.</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-kubernetes-service-types-explained">2. Kubernetes Service Types Explained</h2>
+<h3 id="a-clusterip">a. ClusterIP</h3>
+<pre><code>- Exposes the Service on a cluster-internal IP
+- Accessible **only inside** the cluster
+- Typical use: 
+    - Internal-only services 
+    - Microservices talking to each other
+</code></pre>
+<h3 id="b-nodeport">b. NodePort</h3>
+<pre><code>- Exposes the Service on each node’s IP at a static port (the NodePort)
+- Accessible from outside the cluster: same VPC or the internet (depending on firewall/Security Group rules)
+- Reachable via **NodeIP:NodePort** (port range 30000 - 32767)
+- Typical use:
+    - Simple setups, debugging, or in environments without cloud LBs. 
+    - Quick test or direct access, not recommended for production internet-facing apps.
+</code></pre>
+<h3 id="c-loadbalancer">c. LoadBalancer</h3>
+<pre><code>- Creates a cloud load balancer (cloud provider integration, e.g., AWS ALB).
+- Assigns a public IP and routes traffic to your Service.
+- Accessible from the internet.
+- Typical use: exposing production workloads to the internet (websites, APIs).
+</code></pre>
+<h3 id="d-externalname">d. ExternalName</h3>
+<pre><code>- Maps the Service to an external DNS name.
+- Used for routing cluster traffic to resources outside Kubernetes.
+- Not used for exposing services to the internet.
+- Typical use: referencing services outside the cluster by DNS name(database,SaaS endpoints).
+</code></pre>
+<h2 id="3-ingress">3. Ingress</h2>
+<ul>
+<li>Ingress is a Kubernetes resource that manages external HTTP/HTTPS traffic
+<ul>
+<li>Receives incoming requests from outside the cluster</li>
+<li>Routes them to the right Service based on rules (URL path, host, headers…)</li>
+</ul>
+</li>
+<li>Typical flow: User → ALB/NLB/NGINX (provisioned by the Ingress Controller) → Service → Pods.</li>
+<li>Ingress Controller:
+<ul>
+<li>A pod/deployment running inside your cluster</li>
+<li>monitors your Ingress resources.</li>
+<li>configures and manages actual routing rules on a cloud load balancer</li>
+</ul>
+</li>
+<li>Ingress Class:
+<ul>
+<li>a way to specify which Ingress Controller is responsible for handling a particular Ingress resource</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-curious-question">4. Curious question</h2>
+<p>Q: Why Do You Need Ingress?
+A: Without Ingress, to expose multiple applications or services externally, you would need many individual LoadBalancer services, which becomes expensive and complex quickly.</p>
+    </div>
+    <a href="/kubernetes/kubernetes-service-types-and-ingress/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
       
         <div class="w-100 w-30-l mb4 relative bg-white">
           <div class="w-100 mb4 nested-copy-line-height relative bg-white">
