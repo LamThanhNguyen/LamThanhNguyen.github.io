@@ -96,3 +96,35 @@ Analogy:
 **"`eksctl` is like the construction crew, building the infrastructure of your Kubernetes cluster."**
 
 **"`kubectl` is the interior decorator and maintenance staff, managing resources and workloads within the Kubernetes cluster."**
+
+## 5. Install Helm
+```bash
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+```
+You can verify your helm:
+```bash
+helm version --template='{{ .Version }}{{ "\n" }}'
+```
+
+## 6. Install k9s
+```bash
+curl -LO https://github.com/derailed/k9s/releases/download/v0.50.6/k9s_Linux_amd64.tar.gz
+tar -xzf k9s_Linux_amd64.tar.gz
+sudo mv k9s /usr/local/bin/
+rm k9s_Linux_amd64.tar.gz
+```
+You can verify your k9s:
+```bash
+k9s version
+```
+Some usefuls commands:
+```bash
+k9s
+:ns
+:service
+:pods
+esc
+quit
+```
