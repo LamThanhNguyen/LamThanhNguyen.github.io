@@ -1,5 +1,5 @@
 ---
-date: 2025-06-12T10:58:08-04:00
+date: 2025-06-12
 description: "Understanding Kubernetes Service Types & Ingress"
 featured_image: "/images/k8s-service-types-and-ingress.png"
 tags: ["kubernetes", "aws", "load balancer", "service type", "ingress"]

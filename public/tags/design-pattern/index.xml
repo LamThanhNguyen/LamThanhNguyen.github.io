@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Database on Liam Blogs</title>
-    <link>https://lamthanhnguyen.github.io/database/</link>
-    <description>Recent content in Database on Liam Blogs</description>
+    <title>Design Pattern on Liam Blogs</title>
+    <link>https://lamthanhnguyen.github.io/tags/design-pattern/</link>
+    <description>Recent content in Design Pattern on Liam Blogs</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://lamthanhnguyen.github.io/database/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lamthanhnguyen.github.io/tags/design-pattern/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>I. 12 Key Design Pattern In MongoDB With Real World Use Case</title>
       <link>https://lamthanhnguyen.github.io/database/12-key-design-pattern-in-mongodb-with-real-world-use-case/</link>

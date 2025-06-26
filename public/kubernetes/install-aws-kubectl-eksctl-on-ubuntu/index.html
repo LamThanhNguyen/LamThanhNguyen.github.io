@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
     <title>I. Install AWS CLI, kubectl, and eksctl | Liam Blogs</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Step-by-step guide to installing AWS CLI, kubectl, and eksctl on Ubuntu 22.04.3 LTS (WSL).">
-    <meta name="generator" content="Hugo 0.147.8">
+    <meta name="generator" content="Hugo 0.147.9">
     
     
     
-      <meta name="robots" content="noindex, nofollow">
+      <meta name="robots" content="index, follow">
     
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css" >
 
 
 
@@ -34,18 +34,18 @@
     
 
     
-      <link rel="canonical" href="http://localhost:1313/kubernetes/install-aws-kubectl-eksctl-on-ubuntu/">
+      <link rel="canonical" href="https://lamthanhnguyen.github.io/kubernetes/install-aws-kubectl-eksctl-on-ubuntu/">
     
 
-    <meta property="og:url" content="http://localhost:1313/kubernetes/install-aws-kubectl-eksctl-on-ubuntu/">
+    <meta property="og:url" content="https://lamthanhnguyen.github.io/kubernetes/install-aws-kubectl-eksctl-on-ubuntu/">
   <meta property="og:site_name" content="Liam Blogs">
   <meta property="og:title" content="I. Install AWS CLI, kubectl, and eksctl">
   <meta property="og:description" content="Step-by-step guide to installing AWS CLI, kubectl, and eksctl on Ubuntu 22.04.3 LTS (WSL).">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="kubernetes">
-    <meta property="article:published_time" content="2025-06-08T10:58:08-04:00">
-    <meta property="article:modified_time" content="2025-06-08T10:58:08-04:00">
+    <meta property="article:published_time" content="2025-06-08T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-06-08T00:00:00+00:00">
     <meta property="article:tag" content="Kubernetes">
     <meta property="article:tag" content="Aws">
     <meta property="article:tag" content="Eks">
@@ -54,16 +54,18 @@
 
   <meta itemprop="name" content="I. Install AWS CLI, kubectl, and eksctl">
   <meta itemprop="description" content="Step-by-step guide to installing AWS CLI, kubectl, and eksctl on Ubuntu 22.04.3 LTS (WSL).">
-  <meta itemprop="datePublished" content="2025-06-08T10:58:08-04:00">
-  <meta itemprop="dateModified" content="2025-06-08T10:58:08-04:00">
-  <meta itemprop="wordCount" content="397">
+  <meta itemprop="datePublished" content="2025-06-08T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-06-08T00:00:00+00:00">
+  <meta itemprop="wordCount" content="452">
   <meta itemprop="keywords" content="Kubernetes,Aws,Eks,Kubectl,Cli">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="I. Install AWS CLI, kubectl, and eksctl">
   <meta name="twitter:description" content="Step-by-step guide to installing AWS CLI, kubectl, and eksctl on Ubuntu 22.04.3 LTS (WSL).">
 
+      
+    
 	
-  </head><body class="ma0 avenir bg-near-white development">
+  </head><body class="ma0 avenir bg-near-white production">
 
     
    
@@ -72,7 +74,7 @@
   
   
   
-  <header class="cover bg-center" style="background-image: url('http://localhost:1313/images/install-aws-kubectl-eksctl-cli.png');">
+  <header class="cover bg-center" style="background-image: url('https://lamthanhnguyen.github.io/images/install-aws-kubectl-eksctl-cli.png');">
     <div class="bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l center items-center justify-between">
@@ -96,6 +98,12 @@
           <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white white-90 no-underline" href="/aws/" title="AWS page">
               AWS
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/database/" title="Database page">
+              Database
             </a>
           </li>
           
@@ -144,7 +152,7 @@
       <aside class="instapaper_ignoref b helvetica tracked ttu">
           
         Kubernetes
-      </aside><div id="sharing" class="mt3 ananke-socials"><a href="https://www.linkedin.com/shareArticle?&amp;mini=true&amp;source=http%3A%2F%2Flocalhost%3A1313%2Fkubernetes%2Finstall-aws-kubectl-eksctl-on-ubuntu%2F&amp;summary=Ubuntu&#43;22.04.3&#43;LTS&#43;-&#43;Windows&#43;Subsystem&#43;for&#43;Linux&#43;-&#43;AMD64%0A1.&#43;Install&#43;%26amp%3Bamp%3B&#43;Config&#43;AWS&#43;CLI&#43;sudo&#43;snap&#43;install&#43;aws-cli&#43;--classic&#43;aws&#43;--version&#43;which&#43;aws&#43;Configure&#43;AWS&#43;account%0Aaws&#43;configure&#43;AWS&#43;Access&#43;Key&#43;ID&#43;%5BNone%5D%3A&#43;xxxxxxxxxxxx&#43;AWS&#43;Secret&#43;Access&#43;Key&#43;%5BNone%5D%3A&#43;xxxxxxxxxxxxxxxx%2Bxxxxxx&#43;Default&#43;region&#43;name&#43;%5BNone%5D%3A&#43;ap-southeast-1&#43;Default&#43;output&#43;format&#43;%5BNone%5D%3A&#43;json&#43;You&#43;can&#43;verify&#43;your&#43;aws&#43;account%3A%0Acat&#43;~%2F.aws%2Fcredentials&#43;cat&#43;~%2F.aws%2Fconfig&#43;aws&#43;ec2&#43;describe-vpcs&#43;2.&#43;Install&#43;kubectl&#43;CLI&#43;kubectl&#43;is&#43;the&#43;command-line&#43;interface&#43;%28CLI%29&#43;tool&#43;used&#43;to&#43;interact&#43;with&#43;Kubernetes&#43;clusters.&#43;It&#43;allows&#43;developers&#43;and&#43;operators&#43;to&#43;manage&#43;cluster&#43;resources%2C&#43;inspect&#43;states%2C&#43;deploy&#43;applications%2C&#43;and&#43;perform&#43;administrative&#43;tasks.%0A&amp;title=I.&#43;Install&#43;AWS&#43;CLI%2C&#43;kubectl%2C&#43;and&#43;eksctl&amp;url=http%3A%2F%2Flocalhost%3A1313%2Fkubernetes%2Finstall-aws-kubectl-eksctl-on-ubuntu%2F"
+      </aside><div id="sharing" class="mt3 ananke-socials"><a href="https://www.linkedin.com/shareArticle?&amp;mini=true&amp;source=https%3A%2F%2Flamthanhnguyen.github.io%2Fkubernetes%2Finstall-aws-kubectl-eksctl-on-ubuntu%2F&amp;summary=Ubuntu&#43;22.04.3&#43;LTS&#43;-&#43;Windows&#43;Subsystem&#43;for&#43;Linux&#43;-&#43;AMD64%0A1.&#43;Install&#43;%26amp%3Bamp%3B&#43;Config&#43;AWS&#43;CLI&#43;sudo&#43;snap&#43;install&#43;aws-cli&#43;--classic&#43;aws&#43;--version&#43;which&#43;aws&#43;Configure&#43;AWS&#43;account%0Aaws&#43;configure&#43;AWS&#43;Access&#43;Key&#43;ID&#43;%5BNone%5D%3A&#43;xxxxxxxxxxxx&#43;AWS&#43;Secret&#43;Access&#43;Key&#43;%5BNone%5D%3A&#43;xxxxxxxxxxxxxxxx%2Bxxxxxx&#43;Default&#43;region&#43;name&#43;%5BNone%5D%3A&#43;ap-southeast-1&#43;Default&#43;output&#43;format&#43;%5BNone%5D%3A&#43;json&#43;You&#43;can&#43;verify&#43;your&#43;aws&#43;account%3A%0Acat&#43;~%2F.aws%2Fcredentials&#43;cat&#43;~%2F.aws%2Fconfig&#43;aws&#43;ec2&#43;describe-vpcs&#43;2.&#43;Install&#43;kubectl&#43;CLI&#43;kubectl&#43;is&#43;the&#43;command-line&#43;interface&#43;%28CLI%29&#43;tool&#43;used&#43;to&#43;interact&#43;with&#43;Kubernetes&#43;clusters.&#43;It&#43;allows&#43;developers&#43;and&#43;operators&#43;to&#43;manage&#43;cluster&#43;resources%2C&#43;inspect&#43;states%2C&#43;deploy&#43;applications%2C&#43;and&#43;perform&#43;administrative&#43;tasks.%0A&amp;title=I.&#43;Install&#43;AWS&#43;CLI%2C&#43;kubectl%2C&#43;and&#43;eksctl&amp;url=https%3A%2F%2Flamthanhnguyen.github.io%2Fkubernetes%2Finstall-aws-kubectl-eksctl-on-ubuntu%2F"
         class="ananke-social-link linkedin no-underline"
         title="Share on LinkedIn" aria-label="Share on LinkedIn"
         target="_blank" rel="nofollow noopener noreferrer">
@@ -156,7 +164,7 @@
       
       
       
-      <time class="f6 mv4 dib tracked" datetime="2025-06-08T10:58:08-04:00">June 8, 2025</time>
+      <time class="f6 mv4 dib tracked" datetime="2025-06-08T00:00:00Z">June 8, 2025</time>
       
 
       
@@ -220,7 +228,27 @@ While <code>kubectl</code> and <code>eksctl</code> may seem similar because they
 <p>Analogy:</p>
 <p><strong>&quot;<code>eksctl</code> is like the construction crew, building the infrastructure of your Kubernetes cluster.&quot;</strong></p>
 <p><strong>&quot;<code>kubectl</code> is the interior decorator and maintenance staff, managing resources and workloads within the Kubernetes cluster.&quot;</strong></p>
-<ul class="pa0">
+<h2 id="5-install-helm">5. Install Helm</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ae81ff">700</span> get_helm.sh
+</span></span><span style="display:flex;"><span>./get_helm.sh
+</span></span></code></pre></div><p>You can verify your helm:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>helm version --template<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{{ .Version }}{{ &#34;\n&#34; }}&#39;</span>
+</span></span></code></pre></div><h2 id="6-install-k9s">6. Install k9s</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -LO https://github.com/derailed/k9s/releases/download/v0.50.6/k9s_Linux_amd64.tar.gz
+</span></span><span style="display:flex;"><span>tar -xzf k9s_Linux_amd64.tar.gz
+</span></span><span style="display:flex;"><span>sudo mv k9s /usr/local/bin/
+</span></span><span style="display:flex;"><span>rm k9s_Linux_amd64.tar.gz
+</span></span></code></pre></div><p>You can verify your k9s:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>k9s version
+</span></span></code></pre></div><p>Some usefuls commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>k9s
+</span></span><span style="display:flex;"><span>:ns
+</span></span><span style="display:flex;"><span>:service
+</span></span><span style="display:flex;"><span>:pods
+</span></span><span style="display:flex;"><span>esc
+</span></span><span style="display:flex;"><span>quit
+</span></span></code></pre></div><ul class="pa0">
   
    <li class="list di">
      <a href="/tags/kubernetes/" class="link f5 grow br-pill ba ph3 pv2 mb2 dib black sans-serif no-underline">Kubernetes</a>
@@ -261,7 +289,7 @@ While <code>kubectl</code> and <code>eksctl</code> may seem similar because they
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://lamthanhnguyen.github.io/" >
     &copy;  Liam Blogs 2025 
   </a>
     <div><div class="ananke-socials"><a href="http://linkedin.com/in/lam-thanh-nguyen-abcd6789" target="_blank" rel="noopener"

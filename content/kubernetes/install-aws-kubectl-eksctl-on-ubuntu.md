@@ -1,5 +1,5 @@
 ---
-date: 2025-06-08T10:58:08-04:00
+date: 2025-06-08
 description: "Step-by-step guide to installing AWS CLI, kubectl, and eksctl on Ubuntu 22.04.3 LTS (WSL)."
 featured_image: "/images/install-aws-kubectl-eksctl-cli.png"
 tags: ["kubernetes", "aws", "eks", "kubectl", "cli"]
