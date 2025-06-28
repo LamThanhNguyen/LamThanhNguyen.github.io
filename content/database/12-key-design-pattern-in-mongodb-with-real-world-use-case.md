@@ -9,6 +9,20 @@ title: "I. 12 Key Design Pattern In MongoDB With Real World Use Case"
 # Introduction
 MongoDB provides a variety of design patterns to help you model data efficiently for real-world use cases. Below are 12 key patterns every developer should know, each illustrated with practical examples.
 
+# Table of Contents
+- [1. Attribute Pattern](#1-attribute-pattern)
+- [2. Computed Pattern](#2-computed-pattern)
+- [3. Bucket Pattern](#3-bucket-pattern)
+- [4. Schema Versioning Pattern](#4-schema-versioning-pattern)
+- [5. Tree Pattern](#5-tree-pattern)
+- [6. Subset Pattern](#6-subset-pattern)
+- [7. Approximation Pattern](#7-approximation-pattern)
+- [8. Outlier Pattern](#8-outlier-pattern)
+- [9. Polymorphic Pattern](#9-polymorphic-pattern)
+- [10. Extended Reference Pattern](#10-extended-reference-pattern)
+- [11. Pre-aggregation Pattern](#11-pre-aggregation-pattern)
+- [12. Document Versioning Pattern](#12-document-versioning-pattern)
+
 ## 1. Attribute Pattern
 ### Scenario:
 

@@ -54,7 +54,7 @@
   <meta itemprop="description" content="12 Key Design Pattern in MongoDB">
   <meta itemprop="datePublished" content="2025-06-20T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-06-20T00:00:00+00:00">
-  <meta itemprop="wordCount" content="2747">
+  <meta itemprop="wordCount" content="2789">
   <meta itemprop="keywords" content="Mongodb,Nosql,Design Pattern">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="I. 12 Key Design Pattern In MongoDB With Real World Use Case">
@@ -156,7 +156,7 @@
       <aside class="instapaper_ignoref b helvetica tracked ttu">
           
         Database
-      </aside><div id="sharing" class="mt3 ananke-socials"><a href="https://www.linkedin.com/shareArticle?&amp;mini=true&amp;source=https%3A%2F%2Flamthanhnguyen.github.io%2Fdatabase%2F12-key-design-pattern-in-mongodb-with-real-world-use-case%2F&amp;summary=Introduction&#43;MongoDB&#43;provides&#43;a&#43;variety&#43;of&#43;design&#43;patterns&#43;to&#43;help&#43;you&#43;model&#43;data&#43;efficiently&#43;for&#43;real-world&#43;use&#43;cases.&#43;Below&#43;are&#43;12&#43;key&#43;patterns&#43;every&#43;developer&#43;should&#43;know%2C&#43;each&#43;illustrated&#43;with&#43;practical&#43;examples.%0A1.&#43;Attribute&#43;Pattern&#43;Scenario%3A&#43;An&#43;online&#43;store&#43;has&#43;multiple&#43;product&#43;categories%2C&#43;such&#43;as&#43;smartphones%2C&#43;laptops%2C&#43;and&#43;clothing.&#43;Each&#43;category&#43;contains&#43;items&#43;with&#43;a&#43;wide&#43;range&#43;of&#43;attributes.&#43;For&#43;example%3A%0ASmartphones%3A&#43;screen&#43;size%2C&#43;battery&#43;capacity%2C&#43;camera&#43;resolution%2C&#43;etc.&#43;Laptops%3A&#43;processor&#43;type%2C&#43;RAM&#43;size%2C&#43;storage&#43;type%2C&#43;etc.&#43;Clothing%3A&#43;size%2C&#43;color%2C&#43;material%2C&#43;etc.&#43;Due&#43;to&#43;the&#43;variability&#43;and&#43;unpredictability&#43;of&#43;these&#43;attributes%2C&#43;using&#43;a&#43;rigid&#43;schema&#43;is&#43;inefficient.%0A&amp;title=I.&#43;12&#43;Key&#43;Design&#43;Pattern&#43;In&#43;MongoDB&#43;With&#43;Real&#43;World&#43;Use&#43;Case&amp;url=https%3A%2F%2Flamthanhnguyen.github.io%2Fdatabase%2F12-key-design-pattern-in-mongodb-with-real-world-use-case%2F"
+      </aside><div id="sharing" class="mt3 ananke-socials"><a href="https://www.linkedin.com/shareArticle?&amp;mini=true&amp;source=https%3A%2F%2Flamthanhnguyen.github.io%2Fdatabase%2F12-key-design-pattern-in-mongodb-with-real-world-use-case%2F&amp;summary=Introduction&#43;MongoDB&#43;provides&#43;a&#43;variety&#43;of&#43;design&#43;patterns&#43;to&#43;help&#43;you&#43;model&#43;data&#43;efficiently&#43;for&#43;real-world&#43;use&#43;cases.&#43;Below&#43;are&#43;12&#43;key&#43;patterns&#43;every&#43;developer&#43;should&#43;know%2C&#43;each&#43;illustrated&#43;with&#43;practical&#43;examples.%0ATable&#43;of&#43;Contents&#43;1.&#43;Attribute&#43;Pattern&#43;2.&#43;Computed&#43;Pattern&#43;3.&#43;Bucket&#43;Pattern&#43;4.&#43;Schema&#43;Versioning&#43;Pattern&#43;5.&#43;Tree&#43;Pattern&#43;6.&#43;Subset&#43;Pattern&#43;7.&#43;Approximation&#43;Pattern&#43;8.&#43;Outlier&#43;Pattern&#43;9.&#43;Polymorphic&#43;Pattern&#43;10.&#43;Extended&#43;Reference&#43;Pattern&#43;11.&#43;Pre-aggregation&#43;Pattern&#43;12.&#43;Document&#43;Versioning&#43;Pattern&#43;1.&#43;Attribute&#43;Pattern&#43;Scenario%3A&#43;An&#43;online&#43;store&#43;has&#43;multiple&#43;product&#43;categories%2C&#43;such&#43;as&#43;smartphones%2C&#43;laptops%2C&#43;and&#43;clothing.&#43;Each&#43;category&#43;contains&#43;items&#43;with&#43;a&#43;wide&#43;range&#43;of&#43;attributes.&#43;For&#43;example%3A%0A&amp;title=I.&#43;12&#43;Key&#43;Design&#43;Pattern&#43;In&#43;MongoDB&#43;With&#43;Real&#43;World&#43;Use&#43;Case&amp;url=https%3A%2F%2Flamthanhnguyen.github.io%2Fdatabase%2F12-key-design-pattern-in-mongodb-with-real-world-use-case%2F"
         class="ananke-social-link linkedin no-underline"
         title="Share on LinkedIn" aria-label="Share on LinkedIn"
         target="_blank" rel="nofollow noopener noreferrer">
@@ -176,6 +176,21 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="introduction">Introduction</h1>
 <p>MongoDB provides a variety of design patterns to help you model data efficiently for real-world use cases. Below are 12 key patterns every developer should know, each illustrated with practical examples.</p>
+<h1 id="table-of-contents">Table of Contents</h1>
+<ul>
+<li><a href="#1-attribute-pattern">1. Attribute Pattern</a></li>
+<li><a href="#2-computed-pattern">2. Computed Pattern</a></li>
+<li><a href="#3-bucket-pattern">3. Bucket Pattern</a></li>
+<li><a href="#4-schema-versioning-pattern">4. Schema Versioning Pattern</a></li>
+<li><a href="#5-tree-pattern">5. Tree Pattern</a></li>
+<li><a href="#6-subset-pattern">6. Subset Pattern</a></li>
+<li><a href="#7-approximation-pattern">7. Approximation Pattern</a></li>
+<li><a href="#8-outlier-pattern">8. Outlier Pattern</a></li>
+<li><a href="#9-polymorphic-pattern">9. Polymorphic Pattern</a></li>
+<li><a href="#10-extended-reference-pattern">10. Extended Reference Pattern</a></li>
+<li><a href="#11-pre-aggregation-pattern">11. Pre-aggregation Pattern</a></li>
+<li><a href="#12-document-versioning-pattern">12. Document Versioning Pattern</a></li>
+</ul>
 <h2 id="1-attribute-pattern">1. Attribute Pattern</h2>
 <h3 id="scenario">Scenario:</h3>
 <p>An online store has multiple product categories, such as smartphones, laptops, and clothing. Each category contains items with a wide range of attributes. For example:</p>

@@ -51,7 +51,7 @@
 
   <meta itemprop="name" content="I. Concurrency and Parallelism In Golang And Python">
   <meta itemprop="description" content="Deep Dive Into Concurrency and Parallelism in Golang and Python">
-  <meta itemprop="wordCount" content="1255">
+  <meta itemprop="wordCount" content="1319">
   <meta itemprop="keywords" content="Python,Golang,Concurrency,Parallelism">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="I. Concurrency and Parallelism In Golang And Python">
@@ -153,7 +153,7 @@
       <aside class="instapaper_ignoref b helvetica tracked ttu">
           
         Programming Language
-      </aside><div id="sharing" class="mt3 ananke-socials"><a href="https://www.linkedin.com/shareArticle?&amp;mini=true&amp;source=https%3A%2F%2Flamthanhnguyen.github.io%2Fprogramming-language%2Fconcurrency-and-parallelism-in-golang-and-python%2F&amp;summary=1.&#43;Introduction&#43;-&#43;Why&#43;concurrency&#43;and&#43;parallelism&#43;matter%3A&#43;Modern&#43;software&#43;isn%E2%80%99t&#43;just&#43;about&#43;doing&#43;one&#43;thing&#43;at&#43;a&#43;time.&#43;From&#43;high-traffic&#43;web&#43;servers&#43;and&#43;real-time&#43;analytics%2C&#43;to&#43;background&#43;processing&#43;and&#43;automation%2C&#43;today%E2%80%99s&#43;applications&#43;often&#43;need&#43;to&#43;handle&#43;multiple&#43;tasks&#43;%E2%80%9Cat&#43;once.%E2%80%9D&#43;Whether&#43;it%E2%80%99s&#43;serving&#43;thousands&#43;of&#43;user&#43;requests%2C&#43;processing&#43;large&#43;datasets%2C&#43;or&#43;running&#43;background&#43;jobs%2C&#43;your&#43;program%E2%80%99s&#43;ability&#43;to&#43;efficiently&#43;juggle&#43;several&#43;operations&#43;can&#43;be&#43;the&#43;difference&#43;between&#43;fast%2C&#43;scalable&#43;software&#43;and&#43;a&#43;sluggish%2C&#43;unresponsive&#43;system.%0A&amp;title=I.&#43;Concurrency&#43;and&#43;Parallelism&#43;In&#43;Golang&#43;And&#43;Python&amp;url=https%3A%2F%2Flamthanhnguyen.github.io%2Fprogramming-language%2Fconcurrency-and-parallelism-in-golang-and-python%2F"
+      </aside><div id="sharing" class="mt3 ananke-socials"><a href="https://www.linkedin.com/shareArticle?&amp;mini=true&amp;source=https%3A%2F%2Flamthanhnguyen.github.io%2Fprogramming-language%2Fconcurrency-and-parallelism-in-golang-and-python%2F&amp;summary=Table&#43;of&#43;Contents&#43;1.&#43;Introduction&#43;Why&#43;concurrency&#43;and&#43;parallelism&#43;matter&#43;Key&#43;differences&#43;between&#43;concurrency&#43;and&#43;parallelism&#43;2.&#43;Concurrency&#43;in&#43;Golang&#43;Goroutines&#43;Channels&#43;Example&#43;code&#43;3.&#43;Concurrency&#43;in&#43;Python&#43;Threads&#43;Asyncio%3A&#43;Concurrency&#43;for&#43;IO-bound&#43;Work&#43;Example&#43;code&#43;4.&#43;Parallelism&#43;in&#43;Golang&#43;Go&#43;Scheduler%3A&#43;The&#43;G-M-P&#43;Model&#43;Example&#43;code&#43;5.&#43;Parallelism&#43;in&#43;Python&#43;The&#43;GIL&#43;and&#43;Its&#43;Impact&#43;Multiprocessing&#43;for&#43;Real&#43;Parallelism&#43;Example&#43;code&#43;6.&#43;Conclustion&#43;1.&#43;Introduction&#43;-&#43;Why&#43;concurrency&#43;and&#43;parallelism&#43;matter%3A&#43;Modern&#43;software&#43;isn%E2%80%99t&#43;just&#43;about&#43;doing&#43;one&#43;thing&#43;at&#43;a&#43;time.&#43;From&#43;high-traffic&#43;web&#43;servers&#43;and&#43;real-time&#43;analytics%2C&#43;to&#43;background&#43;processing&#43;and&#43;automation%2C&#43;today%E2%80%99s&#43;applications&#43;often&#43;need&#43;to&#43;handle&#43;multiple&#43;tasks&#43;%E2%80%9Cat&#43;once.%E2%80%9D&#43;Whether&#43;it%E2%80%99s&#43;serving&#43;thousands&#43;of&#43;user&#43;requests%2C&#43;processing&#43;large&#43;datasets%2C&#43;or&#43;running&#43;background&#43;jobs%2C&#43;your&#43;program%E2%80%99s&#43;ability&#43;to&#43;efficiently&#43;juggle&#43;several&#43;operations&#43;can&#43;be&#43;the&#43;difference&#43;between&#43;fast%2C&#43;scalable&#43;software&#43;and&#43;a&#43;sluggish%2C&#43;unresponsive&#43;system.%0A&amp;title=I.&#43;Concurrency&#43;and&#43;Parallelism&#43;In&#43;Golang&#43;And&#43;Python&amp;url=https%3A%2F%2Flamthanhnguyen.github.io%2Fprogramming-language%2Fconcurrency-and-parallelism-in-golang-and-python%2F"
         class="ananke-social-link linkedin no-underline"
         title="Share on LinkedIn" aria-label="Share on LinkedIn"
         target="_blank" rel="nofollow noopener noreferrer">
@@ -169,7 +169,44 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="1-introduction">1. Introduction</h1>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#1-introduction">1. Introduction</a>
+<ul>
+<li><a href="#--why-concurrency-and-parallelism-matter">Why concurrency and parallelism matter</a></li>
+<li><a href="#--key-differences-between-concurrency-and-parallelism">Key differences between concurrency and parallelism</a></li>
+</ul>
+</li>
+<li><a href="#2-concurrency-in-golang">2. Concurrency in Golang</a>
+<ul>
+<li><a href="#--goroutines">Goroutines</a></li>
+<li><a href="#--channels">Channels</a></li>
+<li><a href="#--example-code">Example code</a></li>
+</ul>
+</li>
+<li><a href="#3-concurrency-in-python">3. Concurrency in Python</a>
+<ul>
+<li><a href="#--threads">Threads</a></li>
+<li><a href="#--asyncio-concurrency-for-io-bound-work">Asyncio: Concurrency for IO-bound Work</a></li>
+<li><a href="#--example-code-1">Example code</a></li>
+</ul>
+</li>
+<li><a href="#4-parallelism-in-golang">4. Parallelism in Golang</a>
+<ul>
+<li><a href="#go-scheduler-the-g-m-p-model">Go Scheduler: The G-M-P Model</a></li>
+<li><a href="#--example-code-2">Example code</a></li>
+</ul>
+</li>
+<li><a href="#5-parallelism-in-python">5. Parallelism in Python</a>
+<ul>
+<li><a href="#--the-gil-and-its-impact">The GIL and Its Impact</a></li>
+<li><a href="#--multiprocessing-for-real-parallelism">Multiprocessing for Real Parallelism</a></li>
+<li><a href="#--example-code-3">Example code</a></li>
+</ul>
+</li>
+<li><a href="#6-conclustion">6. Conclustion</a></li>
+</ul>
+<h1 id="1-introduction">1. Introduction</h1>
 <h2 id="--why-concurrency-and-parallelism-matter">- Why concurrency and parallelism matter:</h2>
 <p>Modern software isn’t just about doing one thing at a time. From high-traffic web servers and real-time analytics, to background processing and automation, today’s applications often need to handle multiple tasks “at once.” Whether it’s serving thousands of user requests, processing large datasets, or running background jobs, your program’s ability to efficiently juggle several operations can be the difference between fast, scalable software and a sluggish, unresponsive system.</p>
 <p>That’s where <strong>concurrency</strong> and <strong>parallelism</strong> come in. Mastering these concepts can lead to:</p>

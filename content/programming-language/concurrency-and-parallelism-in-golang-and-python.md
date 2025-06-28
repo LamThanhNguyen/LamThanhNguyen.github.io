@@ -5,6 +5,27 @@ tags: ["python", "golang", "concurrency", "parallelism"]
 title: "I. Concurrency and Parallelism In Golang And Python"
 ---
 
+## Table of Contents
+- [1. Introduction](#1-introduction)
+  - [Why concurrency and parallelism matter](#--why-concurrency-and-parallelism-matter)
+  - [Key differences between concurrency and parallelism](#--key-differences-between-concurrency-and-parallelism)
+- [2. Concurrency in Golang](#2-concurrency-in-golang)
+  - [Goroutines](#--goroutines)
+  - [Channels](#--channels)
+  - [Example code](#--example-code)
+- [3. Concurrency in Python](#3-concurrency-in-python)
+  - [Threads](#--threads)
+  - [Asyncio: Concurrency for IO-bound Work](#--asyncio-concurrency-for-io-bound-work)
+  - [Example code](#--example-code-1)
+- [4. Parallelism in Golang](#4-parallelism-in-golang)
+  - [Go Scheduler: The G-M-P Model](#go-scheduler-the-g-m-p-model)
+  - [Example code](#--example-code-2)
+- [5. Parallelism in Python](#5-parallelism-in-python)
+  - [The GIL and Its Impact](#--the-gil-and-its-impact)
+  - [Multiprocessing for Real Parallelism](#--multiprocessing-for-real-parallelism)
+  - [Example code](#--example-code-3)
+- [6. Conclustion](#6-conclustion)
+
 # 1. Introduction
 ## - Why concurrency and parallelism matter:
 Modern software isn’t just about doing one thing at a time. From high-traffic web servers and real-time analytics, to background processing and automation, today’s applications often need to handle multiple tasks “at once.” Whether it’s serving thousands of user requests, processing large datasets, or running background jobs, your program’s ability to efficiently juggle several operations can be the difference between fast, scalable software and a sluggish, unresponsive system.
