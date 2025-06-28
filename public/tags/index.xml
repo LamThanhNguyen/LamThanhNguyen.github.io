@@ -32,78 +32,106 @@
     <item>
       <title>Aws</title>
       <link>https://lamthanhnguyen.github.io/tags/aws/</link>
-      <pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://lamthanhnguyen.github.io/tags/aws/</guid>
       <description></description>
     </item>
     <item>
-      <title>Ingress</title>
-      <link>https://lamthanhnguyen.github.io/tags/ingress/</link>
-      <pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/ingress/</guid>
+      <title>Cli</title>
+      <link>https://lamthanhnguyen.github.io/tags/cli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://lamthanhnguyen.github.io/tags/cli/</guid>
       <description></description>
     </item>
     <item>
-      <title>Kubernetes</title>
-      <link>https://lamthanhnguyen.github.io/tags/kubernetes/</link>
-      <pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Load Balancer</title>
-      <link>https://lamthanhnguyen.github.io/tags/load-balancer/</link>
-      <pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/load-balancer/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Service Type</title>
-      <link>https://lamthanhnguyen.github.io/tags/service-type/</link>
-      <pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/service-type/</guid>
+      <title>Concurrency</title>
+      <link>https://lamthanhnguyen.github.io/tags/concurrency/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://lamthanhnguyen.github.io/tags/concurrency/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
       <link>https://lamthanhnguyen.github.io/tags/docker/</link>
-      <pubDate>Tue, 10 Jun 2025 10:58:08 -0400</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://lamthanhnguyen.github.io/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Ecr</title>
       <link>https://lamthanhnguyen.github.io/tags/ecr/</link>
-      <pubDate>Tue, 10 Jun 2025 10:58:08 -0400</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://lamthanhnguyen.github.io/tags/ecr/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Github-Actions</title>
-      <link>https://lamthanhnguyen.github.io/tags/github-actions/</link>
-      <pubDate>Tue, 10 Jun 2025 10:58:08 -0400</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/github-actions/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cli</title>
-      <link>https://lamthanhnguyen.github.io/tags/cli/</link>
-      <pubDate>Sun, 08 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/cli/</guid>
       <description></description>
     </item>
     <item>
       <title>Eks</title>
       <link>https://lamthanhnguyen.github.io/tags/eks/</link>
-      <pubDate>Sun, 08 Jun 2025 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://lamthanhnguyen.github.io/tags/eks/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Github-Actions</title>
+      <link>https://lamthanhnguyen.github.io/tags/github-actions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://lamthanhnguyen.github.io/tags/github-actions/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Golang</title>
+      <link>https://lamthanhnguyen.github.io/tags/golang/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://lamthanhnguyen.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ingress</title>
+      <link>https://lamthanhnguyen.github.io/tags/ingress/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://lamthanhnguyen.github.io/tags/ingress/</guid>
       <description></description>
     </item>
     <item>
       <title>Kubectl</title>
       <link>https://lamthanhnguyen.github.io/tags/kubectl/</link>
-      <pubDate>Sun, 08 Jun 2025 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://lamthanhnguyen.github.io/tags/kubectl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kubernetes</title>
+      <link>https://lamthanhnguyen.github.io/tags/kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://lamthanhnguyen.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Load Balancer</title>
+      <link>https://lamthanhnguyen.github.io/tags/load-balancer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://lamthanhnguyen.github.io/tags/load-balancer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Parallelism</title>
+      <link>https://lamthanhnguyen.github.io/tags/parallelism/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://lamthanhnguyen.github.io/tags/parallelism/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://lamthanhnguyen.github.io/tags/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://lamthanhnguyen.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Service Type</title>
+      <link>https://lamthanhnguyen.github.io/tags/service-type/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://lamthanhnguyen.github.io/tags/service-type/</guid>
       <description></description>
     </item>
   </channel>

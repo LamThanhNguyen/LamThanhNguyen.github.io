@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on Liam Blogs</title>
+    <link>https://lamthanhnguyen.github.io/tags/golang/</link>
+    <description>Recent content in Golang on Liam Blogs</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://lamthanhnguyen.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I. Concurrency and Parallelism In Golang And Python</title>
+      <link>https://lamthanhnguyen.github.io/programming-language/concurrency-and-parallelism-in-golang-and-python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://lamthanhnguyen.github.io/programming-language/concurrency-and-parallelism-in-golang-and-python/</guid>
+      <description>&lt;h1 id=&#34;1-introduction&#34;&gt;1. Introduction&lt;/h1&gt;&#xA;&lt;h2 id=&#34;--why-concurrency-and-parallelism-matter&#34;&gt;- Why concurrency and parallelism matter:&lt;/h2&gt;&#xA;&lt;p&gt;Modern software isn’t just about doing one thing at a time. From high-traffic web servers and real-time analytics, to background processing and automation, today’s applications often need to handle multiple tasks “at once.” Whether it’s serving thousands of user requests, processing large datasets, or running background jobs, your program’s ability to efficiently juggle several operations can be the difference between fast, scalable software and a sluggish, unresponsive system.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

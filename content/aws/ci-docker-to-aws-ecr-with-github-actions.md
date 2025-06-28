@@ -1,5 +1,4 @@
 ---
-date: 2025-06-10T10:58:08-04:00
 description: ""
 featured_image: "/images/auto-build-push-docker-to-aws-ecr-github-actions.png"
 tags: ["aws", "github-actions", "ecr", "docker"]
