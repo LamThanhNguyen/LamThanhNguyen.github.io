@@ -111,9 +111,9 @@ You should consider UDP for applications where:
 ## 3.2. Stateless Communication and Speed
 Unlike TCP, UDP is a **connectionless** protocol. It does not establish a formal connection between sender and receiver.
 
-Key benefits:
-- Lower latency: No handshake—just send and receive packets (“datagrams”).
-- Less overhead: No tracking of connections, no retransmissions, no ordering—making UDP extremely lightweight and fast.
+**Key benefits**:
+- **Lower latency**: No handshake—just send and receive packets (“datagrams”).
+- **Less overhead**: No tracking of connections, no retransmissions, no ordering—making UDP extremely lightweight and fast.
 
 This stateless design allows applications to scale to a large number of clients with minimal resources.
 
