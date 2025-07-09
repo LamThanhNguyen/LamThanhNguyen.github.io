@@ -2,73 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://lamthanhnguyen.github.io/database/</loc>
+    <loc>http://localhost:1313/database/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/design-pattern/</loc>
+    <loc>http://localhost:1313/tags/design-pattern/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/database/12-key-design-pattern-in-mongodb-with-real-world-use-case/</loc>
+    <loc>http://localhost:1313/database/12-key-design-pattern-in-mongodb-with-real-world-use-case/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/mongodb/</loc>
+    <loc>http://localhost:1313/tags/mongodb/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/nosql/</loc>
+    <loc>http://localhost:1313/tags/nosql/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/aws/</loc>
+    <loc>http://localhost:1313/tags/aws/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/aws/</loc>
+    <loc>http://localhost:1313/aws/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/cli/</loc>
+    <loc>http://localhost:1313/tags/cli/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/concurrency/</loc>
+    <loc>http://localhost:1313/tags/concurrency/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/docker/</loc>
+    <loc>http://localhost:1313/tags/docker/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/ecr/</loc>
+    <loc>http://localhost:1313/tags/ecr/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/eks/</loc>
+    <loc>http://localhost:1313/tags/eks/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/github-actions/</loc>
+    <loc>http://localhost:1313/tags/github-actions/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/golang/</loc>
+    <loc>http://localhost:1313/tags/golang/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/aws/ci-docker-to-aws-ecr-with-github-actions/</loc>
+    <loc>http://localhost:1313/aws/ci-docker-to-aws-ecr-with-github-actions/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/programming-language/concurrency-and-parallelism-in-golang-and-python/</loc>
+    <loc>http://localhost:1313/programming-language/concurrency-and-parallelism-in-golang-and-python/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/kubernetes/install-aws-kubectl-eksctl-on-ubuntu/</loc>
+    <loc>http://localhost:1313/kubernetes/install-aws-kubectl-eksctl-on-ubuntu/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/kubernetes/kubernetes-service-types-and-ingress/</loc>
+    <loc>http://localhost:1313/programming-language/mastering-tcp-udp-in-golang/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/ingress/</loc>
+    <loc>http://localhost:1313/kubernetes/kubernetes-service-types-and-ingress/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/kubectl/</loc>
+    <loc>http://localhost:1313/tags/ingress/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/kubernetes/</loc>
+    <loc>http://localhost:1313/tags/kubectl/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/kubernetes/</loc>
+    <loc>http://localhost:1313/kubernetes/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/load-balancer/</loc>
+    <loc>http://localhost:1313/tags/kubernetes/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/parallelism/</loc>
+    <loc>http://localhost:1313/tags/load-balancer/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/programming-language/</loc>
+    <loc>http://localhost:1313/tags/parallelism/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/python/</loc>
+    <loc>http://localhost:1313/programming-language/</loc>
   </url><url>
-    <loc>https://lamthanhnguyen.github.io/tags/service-type/</loc>
+    <loc>http://localhost:1313/tags/python/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/service-type/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/tcp/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/udp/</loc>
   </url>
 </urlset>

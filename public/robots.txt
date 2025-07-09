@@ -1,3 +1,2 @@
 User-agent: *
-Allow: /
-Sitemap: https://lamthanhnguyen.github.io/sitemap.xml
+Disallow: /

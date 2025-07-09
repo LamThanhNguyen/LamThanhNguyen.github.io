@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
     <title>I. Concurrency and Parallelism In Golang And Python | Liam Blogs</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Deep Dive Into Concurrency and Parallelism in Golang and Python">
-    <meta name="generator" content="Hugo 0.147.9">
+    <meta name="generator" content="Hugo 0.148.0">
     
     
     
-      <meta name="robots" content="index, follow">
+      <meta name="robots" content="noindex, nofollow">
     
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
 
 
 
@@ -34,10 +34,10 @@
     
 
     
-      <link rel="canonical" href="https://lamthanhnguyen.github.io/programming-language/concurrency-and-parallelism-in-golang-and-python/">
+      <link rel="canonical" href="http://localhost:1313/programming-language/concurrency-and-parallelism-in-golang-and-python/">
     
 
-    <meta property="og:url" content="https://lamthanhnguyen.github.io/programming-language/concurrency-and-parallelism-in-golang-and-python/">
+    <meta property="og:url" content="http://localhost:1313/programming-language/concurrency-and-parallelism-in-golang-and-python/">
   <meta property="og:site_name" content="Liam Blogs">
   <meta property="og:title" content="I. Concurrency and Parallelism In Golang And Python">
   <meta property="og:description" content="Deep Dive Into Concurrency and Parallelism in Golang and Python">
@@ -57,10 +57,8 @@
   <meta name="twitter:title" content="I. Concurrency and Parallelism In Golang And Python">
   <meta name="twitter:description" content="Deep Dive Into Concurrency and Parallelism in Golang and Python">
 
-      
-    
 	
-  </head><body class="ma0 avenir bg-near-white production">
+  </head><body class="ma0 avenir bg-near-white development">
 
     
    
@@ -69,7 +67,7 @@
   
   
   
-  <header class="cover bg-center" style="background-image: url('https://lamthanhnguyen.github.io/images/concurrency-parallelism-golang-python.png');">
+  <header class="cover bg-center" style="background-image: url('http://localhost:1313/images/concurrency-parallelism-golang-python.png');">
     <div class="bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l center items-center justify-between">
@@ -153,7 +151,7 @@
       <aside class="instapaper_ignoref b helvetica tracked ttu">
           
         Programming Language
-      </aside><div id="sharing" class="mt3 ananke-socials"><a href="https://www.linkedin.com/shareArticle?&amp;mini=true&amp;source=https%3A%2F%2Flamthanhnguyen.github.io%2Fprogramming-language%2Fconcurrency-and-parallelism-in-golang-and-python%2F&amp;summary=Table&#43;of&#43;Contents&#43;1.&#43;Introduction&#43;Why&#43;concurrency&#43;and&#43;parallelism&#43;matter&#43;Key&#43;differences&#43;between&#43;concurrency&#43;and&#43;parallelism&#43;2.&#43;Concurrency&#43;in&#43;Golang&#43;Goroutines&#43;Channels&#43;Example&#43;code&#43;3.&#43;Concurrency&#43;in&#43;Python&#43;Threads&#43;Asyncio%3A&#43;Concurrency&#43;for&#43;IO-bound&#43;Work&#43;Example&#43;code&#43;4.&#43;Parallelism&#43;in&#43;Golang&#43;Go&#43;Scheduler%3A&#43;The&#43;G-M-P&#43;Model&#43;Example&#43;code&#43;5.&#43;Parallelism&#43;in&#43;Python&#43;The&#43;GIL&#43;and&#43;Its&#43;Impact&#43;Multiprocessing&#43;for&#43;Real&#43;Parallelism&#43;Example&#43;code&#43;6.&#43;Conclustion&#43;1.&#43;Introduction&#43;-&#43;Why&#43;concurrency&#43;and&#43;parallelism&#43;matter%3A&#43;Modern&#43;software&#43;isn%E2%80%99t&#43;just&#43;about&#43;doing&#43;one&#43;thing&#43;at&#43;a&#43;time.&#43;From&#43;high-traffic&#43;web&#43;servers&#43;and&#43;real-time&#43;analytics%2C&#43;to&#43;background&#43;processing&#43;and&#43;automation%2C&#43;today%E2%80%99s&#43;applications&#43;often&#43;need&#43;to&#43;handle&#43;multiple&#43;tasks&#43;%E2%80%9Cat&#43;once.%E2%80%9D&#43;Whether&#43;it%E2%80%99s&#43;serving&#43;thousands&#43;of&#43;user&#43;requests%2C&#43;processing&#43;large&#43;datasets%2C&#43;or&#43;running&#43;background&#43;jobs%2C&#43;your&#43;program%E2%80%99s&#43;ability&#43;to&#43;efficiently&#43;juggle&#43;several&#43;operations&#43;can&#43;be&#43;the&#43;difference&#43;between&#43;fast%2C&#43;scalable&#43;software&#43;and&#43;a&#43;sluggish%2C&#43;unresponsive&#43;system.%0A&amp;title=I.&#43;Concurrency&#43;and&#43;Parallelism&#43;In&#43;Golang&#43;And&#43;Python&amp;url=https%3A%2F%2Flamthanhnguyen.github.io%2Fprogramming-language%2Fconcurrency-and-parallelism-in-golang-and-python%2F"
+      </aside><div id="sharing" class="mt3 ananke-socials"><a href="https://www.linkedin.com/shareArticle?&amp;mini=true&amp;source=http%3A%2F%2Flocalhost%3A1313%2Fprogramming-language%2Fconcurrency-and-parallelism-in-golang-and-python%2F&amp;summary=Table&#43;of&#43;Contents&#43;1.&#43;Introduction&#43;Why&#43;concurrency&#43;and&#43;parallelism&#43;matter&#43;Key&#43;differences&#43;between&#43;concurrency&#43;and&#43;parallelism&#43;2.&#43;Concurrency&#43;in&#43;Golang&#43;Goroutines&#43;Channels&#43;Example&#43;code&#43;3.&#43;Concurrency&#43;in&#43;Python&#43;Threads&#43;Asyncio%3A&#43;Concurrency&#43;for&#43;IO-bound&#43;Work&#43;Example&#43;code&#43;4.&#43;Parallelism&#43;in&#43;Golang&#43;Go&#43;Scheduler%3A&#43;The&#43;G-M-P&#43;Model&#43;Example&#43;code&#43;5.&#43;Parallelism&#43;in&#43;Python&#43;The&#43;GIL&#43;and&#43;Its&#43;Impact&#43;Multiprocessing&#43;for&#43;Real&#43;Parallelism&#43;Example&#43;code&#43;6.&#43;Conclustion&#43;1.&#43;Introduction&#43;-&#43;Why&#43;concurrency&#43;and&#43;parallelism&#43;matter%3A&#43;Modern&#43;software&#43;isn%E2%80%99t&#43;just&#43;about&#43;doing&#43;one&#43;thing&#43;at&#43;a&#43;time.&#43;From&#43;high-traffic&#43;web&#43;servers&#43;and&#43;real-time&#43;analytics%2C&#43;to&#43;background&#43;processing&#43;and&#43;automation%2C&#43;today%E2%80%99s&#43;applications&#43;often&#43;need&#43;to&#43;handle&#43;multiple&#43;tasks&#43;%E2%80%9Cat&#43;once.%E2%80%9D&#43;Whether&#43;it%E2%80%99s&#43;serving&#43;thousands&#43;of&#43;user&#43;requests%2C&#43;processing&#43;large&#43;datasets%2C&#43;or&#43;running&#43;background&#43;jobs%2C&#43;your&#43;program%E2%80%99s&#43;ability&#43;to&#43;efficiently&#43;juggle&#43;several&#43;operations&#43;can&#43;be&#43;the&#43;difference&#43;between&#43;fast%2C&#43;scalable&#43;software&#43;and&#43;a&#43;sluggish%2C&#43;unresponsive&#43;system.%0A&amp;title=I.&#43;Concurrency&#43;and&#43;Parallelism&#43;In&#43;Golang&#43;And&#43;Python&amp;url=http%3A%2F%2Flocalhost%3A1313%2Fprogramming-language%2Fconcurrency-and-parallelism-in-golang-and-python%2F"
         class="ananke-social-link linkedin no-underline"
         title="Share on LinkedIn" aria-label="Share on LinkedIn"
         target="_blank" rel="nofollow noopener noreferrer">
@@ -390,6 +388,17 @@ Each processor (P) has its own run queue of goroutines. If a P runs out of work,
 
 
 
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/programming-language/mastering-tcp-udp-in-golang/">II. Mastering TCP and UDP in Golang</a>
+        </li>
+	    
+    </ul>
+</div>
+
 </aside>
 
   </article>
@@ -397,7 +406,7 @@ Each processor (P) has its own run queue of goroutines. If a P runs out of work,
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://lamthanhnguyen.github.io/" >
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
     &copy;  Liam Blogs 2025 
   </a>
     <div><div class="ananke-socials"><a href="http://linkedin.com/in/lam-thanh-nguyen-abcd6789" target="_blank" rel="noopener"
