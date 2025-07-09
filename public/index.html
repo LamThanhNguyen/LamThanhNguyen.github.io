@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
@@ -11,12 +11,12 @@
     
     
     
-      <meta name="robots" content="noindex, nofollow">
+      <meta name="robots" content="index, follow">
     
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css" >
 
 
 
@@ -39,10 +39,10 @@
     
 
     
-      <link rel="canonical" href="http://localhost:1313/">
+      <link rel="canonical" href="https://lamthanhnguyen.github.io/">
     
 
-    <meta property="og:url" content="http://localhost:1313/">
+    <meta property="og:url" content="https://lamthanhnguyen.github.io/">
   <meta property="og:site_name" content="Liam Blogs">
   <meta property="og:title" content="Exploring Tech: Liam&#39;s Journey">
   <meta property="og:description" content="Insights into AI, programming, and technology from Liam&#39;s perspective.">
@@ -58,14 +58,16 @@
   <meta name="twitter:title" content="Exploring Tech: Liam&#39;s Journey">
   <meta name="twitter:description" content="Insights into AI, programming, and technology from Liam&#39;s perspective.">
 
+      
+    
 	
-  </head><body class="ma0 avenir bg-near-white development">
+  </head><body class="ma0 avenir bg-near-white production">
 
     
 
   
   
-  <header class="cover bg-top" style="background-image: url('http://localhost:1313/images/image_size.webp');">
+  <header class="cover bg-top" style="background-image: url('https://lamthanhnguyen.github.io/images/image_size.webp');">
     
     <div class="bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
@@ -168,37 +170,60 @@
       
           
         <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="/kubernetes/install-aws-kubectl-eksctl-on-ubuntu/" class="db grow">
-            <img src="http://localhost:1313/images/install-aws-kubectl-eksctl-cli.png" class="img" alt="image from I. Install AWS CLI, kubectl, and eksctl">
+          <a href="/programming-language/concurrency-and-parallelism-in-golang-and-python/" class="db grow">
+            <img src="https://lamthanhnguyen.github.io/images/concurrency-parallelism-golang-python.png" class="img" alt="image from I. Concurrency and Parallelism In Golang And Python">
           </a>
         </div>
       
       <div class="blah w-100 w-60-ns pl3-ns">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/kubernetes/install-aws-kubectl-eksctl-on-ubuntu/" class="color-inherit dim link">
-            I. Install AWS CLI, kubectl, and eksctl
+          <a href="/programming-language/concurrency-and-parallelism-in-golang-and-python/" class="color-inherit dim link">
+            I. Concurrency and Parallelism In Golang And Python
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>Ubuntu 22.04.3 LTS - Windows Subsystem for Linux - AMD64</p>
-<h2 id="1-install--config-aws-cli">1. Install &amp; Config AWS CLI</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo snap install aws-cli --classic
-</span></span><span style="display:flex;"><span>aws --version
-</span></span><span style="display:flex;"><span>which aws
-</span></span></code></pre></div><p>Configure AWS account</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws configure
-</span></span><span style="display:flex;"><span>AWS Access Key ID <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: xxxxxxxxxxxx
-</span></span><span style="display:flex;"><span>AWS Secret Access Key <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: xxxxxxxxxxxxxxxx+xxxxxx
-</span></span><span style="display:flex;"><span>Default region name <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: ap-southeast-1
-</span></span><span style="display:flex;"><span>Default output format <span style="color:#f92672">[</span>None<span style="color:#f92672">]</span>: json
-</span></span></code></pre></div><p>You can verify your aws account:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat ~/.aws/credentials
-</span></span><span style="display:flex;"><span>cat ~/.aws/config
-</span></span><span style="display:flex;"><span>aws ec2 describe-vpcs
-</span></span></code></pre></div><h2 id="2-install-kubectl-cli">2. Install kubectl CLI</h2>
-<p>kubectl is the command-line interface (CLI) tool used to interact with Kubernetes clusters. It allows developers and operators to manage cluster resources, inspect states, deploy applications, and perform administrative tasks.</p>
+          <h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#1-introduction">1. Introduction</a>
+<ul>
+<li><a href="#--why-concurrency-and-parallelism-matter">Why concurrency and parallelism matter</a></li>
+<li><a href="#--key-differences-between-concurrency-and-parallelism">Key differences between concurrency and parallelism</a></li>
+</ul>
+</li>
+<li><a href="#2-concurrency-in-golang">2. Concurrency in Golang</a>
+<ul>
+<li><a href="#--goroutines">Goroutines</a></li>
+<li><a href="#--channels">Channels</a></li>
+<li><a href="#--example-code">Example code</a></li>
+</ul>
+</li>
+<li><a href="#3-concurrency-in-python">3. Concurrency in Python</a>
+<ul>
+<li><a href="#--threads">Threads</a></li>
+<li><a href="#--asyncio-concurrency-for-io-bound-work">Asyncio: Concurrency for IO-bound Work</a></li>
+<li><a href="#--example-code-1">Example code</a></li>
+</ul>
+</li>
+<li><a href="#4-parallelism-in-golang">4. Parallelism in Golang</a>
+<ul>
+<li><a href="#go-scheduler-the-g-m-p-model">Go Scheduler: The G-M-P Model</a></li>
+<li><a href="#--example-code-2">Example code</a></li>
+</ul>
+</li>
+<li><a href="#5-parallelism-in-python">5. Parallelism in Python</a>
+<ul>
+<li><a href="#--the-gil-and-its-impact">The GIL and Its Impact</a></li>
+<li><a href="#--multiprocessing-for-real-parallelism">Multiprocessing for Real Parallelism</a></li>
+<li><a href="#--example-code-3">Example code</a></li>
+</ul>
+</li>
+<li><a href="#6-conclustion">6. Conclustion</a></li>
+</ul>
+<h1 id="1-introduction">1. Introduction</h1>
+<h2 id="--why-concurrency-and-parallelism-matter">- Why concurrency and parallelism matter:</h2>
+<p>Modern software isn’t just about doing one thing at a time. From high-traffic web servers and real-time analytics, to background processing and automation, today’s applications often need to handle multiple tasks “at once.” Whether it’s serving thousands of user requests, processing large datasets, or running background jobs, your program’s ability to efficiently juggle several operations can be the difference between fast, scalable software and a sluggish, unresponsive system.</p>
         </div>
-        <a href="/kubernetes/install-aws-kubectl-eksctl-on-ubuntu/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        <a href="/programming-language/concurrency-and-parallelism-in-golang-and-python/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
       </div>
     </div>
   </div>
@@ -214,88 +239,70 @@
       
           
         <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="/kubernetes/kubernetes-service-types-and-ingress/" class="db grow">
-            <img src="http://localhost:1313/images/k8s-service-types-and-ingress.png" class="img" alt="image from II. Understanding Kubernetes Service Types &amp; Ingress">
+          <a href="/programming-language/mastering-tcp-udp-in-golang/" class="db grow">
+            <img src="https://lamthanhnguyen.github.io/images/mastering-tcp-udp-in-golang.png" class="img" alt="image from II. Mastering TCP and UDP in Golang">
           </a>
         </div>
       
       <div class="blah w-100 w-60-ns pl3-ns">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/kubernetes/kubernetes-service-types-and-ingress/" class="color-inherit dim link">
-            II. Understanding Kubernetes Service Types &amp; Ingress
+          <a href="/programming-language/mastering-tcp-udp-in-golang/" class="color-inherit dim link">
+            II. Mastering TCP and UDP in Golang
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <h2 id="1-introduction">1. Introduction</h2>
+          <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
-<li>
-<p><strong>Why exposing services matters in Kubernetes</strong>:</p>
+<li><a href="#1-introduction">1. Introduction</a>
 <ul>
-<li>Your workloads are useless if no one can reach them. Service abstraction lets you decouple pod lifecycles from stable endpoints.</li>
+<li><a href="#--why-understanding-networking-is-crucial-for-backend-developers">Why understanding networking is crucial for backend developers</a></li>
+<li><a href="#--short-comparison-of-tcp-and-udp">Short comparison of TCP and UDP</a></li>
 </ul>
 </li>
-<li>
-<p>Overview of Service types vs. Ingress:</p>
+<li><a href="#2-deep-dive-into-tcp">2. Deep Dive into TCP</a>
 <ul>
-<li>Services give every workload an IP; Ingress turns a set of Services into a coherent, externally reachable API surface.</li>
+<li><a href="#21-when-to-use-tcp">2.1. When to Use TCP?</a></li>
+<li><a href="#22-tcp-handshake-syn-syn-ack-ack">2.2. TCP Handshake: SYN, SYN-ACK, ACK</a></li>
+<li><a href="#23-error-handling--retransmission">2.3. Error Handling &amp; Retransmission</a></li>
+<li><a href="#24-advantages--limitations-of-tcp">2.4. Advantages &amp; Limitations of TCP</a></li>
+<li><a href="#25-tcp-code-examples-in-golang">2.5. TCP Code Examples in Golang</a></li>
 </ul>
 </li>
-</ul>
-<h2 id="2-kubernetes-service-types-explained">2. Kubernetes Service Types Explained</h2>
-<h3 id="a-clusterip">a. ClusterIP</h3>
-<pre><code>- Exposes the Service on a cluster-internal IP
-- Accessible **only inside** the cluster
-- Typical use: 
-    - Internal-only services 
-    - Microservices talking to each other
-</code></pre>
-<h3 id="b-nodeport">b. NodePort</h3>
-<pre><code>- Exposes the Service on each node’s IP at a static port (the NodePort)
-- Accessible from outside the cluster: same VPC or the internet (depending on firewall/Security Group rules)
-- Reachable via **NodeIP:NodePort** (port range 30000 - 32767)
-- Typical use:
-    - Simple setups, debugging, or in environments without cloud LBs. 
-    - Quick test or direct access, not recommended for production internet-facing apps.
-</code></pre>
-<h3 id="c-loadbalancer">c. LoadBalancer</h3>
-<pre><code>- Creates a cloud load balancer (cloud provider integration, e.g., AWS ALB).
-- Assigns a public IP and routes traffic to your Service.
-- Accessible from the internet.
-- Typical use: exposing production workloads to the internet (websites, APIs).
-</code></pre>
-<h3 id="d-externalname">d. ExternalName</h3>
-<pre><code>- Maps the Service to an external DNS name.
-- Used for routing cluster traffic to resources outside Kubernetes.
-- Not used for exposing services to the internet.
-- Typical use: referencing services outside the cluster by DNS name(database,SaaS endpoints).
-</code></pre>
-<h2 id="3-ingress">3. Ingress</h2>
+<li><a href="#3-deep-dive-into-udp">3. Deep Dive into UDP</a>
 <ul>
-<li>Ingress is a Kubernetes resource that manages external HTTP/HTTPS traffic
-<ul>
-<li>Receives incoming requests from outside the cluster</li>
-<li>Routes them to the right Service based on rules (URL path, host, headers…)</li>
+<li><a href="#31-when-to-use-udp">3.1. When to Use UDP?</a></li>
+<li><a href="#32-stateless-communication-and-speed">3.2. Stateless Communication and Speed</a></li>
+<li><a href="#33-why-udp-doesnt-guarantee-delivery">3.3. Why UDP Doesn’t Guarantee Delivery</a></li>
+<li><a href="#34-advantages--limitations-of-udp">3.4. Advantages &amp; Limitations of UDP</a></li>
+<li><a href="#35-udp-code-examples-in-golang">3.5. UDP Code Examples in Golang</a></li>
 </ul>
 </li>
-<li>Typical flow: User → ALB/NLB/NGINX (provisioned by the Ingress Controller) → Service → Pods.</li>
-<li>Ingress Controller:
+<li><a href="#4-advanced-topics">4. Advanced Topics</a>
 <ul>
-<li>A pod/deployment running inside your cluster</li>
-<li>monitors your Ingress resources.</li>
-<li>configures and manages actual routing rules on a cloud load balancer</li>
+<li><a href="#41-concurrent-tcp-and-udp-servers-using-goroutines">4.1. Concurrent TCP and UDP Servers Using Goroutines</a></li>
+<li><a href="#42-implementing-protocol-buffers-or-json-data-serialization-with-tcpudp">4.2. Implementing Protocol Buffers or JSON Data Serialization with TCP/UDP</a></li>
+<li><a href="#43-handling-scalability-and-performance-tuning">4.3. Handling Scalability and Performance Tuning</a></li>
 </ul>
 </li>
-<li>Ingress Class:
+<li><a href="#5-best-practices--common-pitfalls">5. Best Practices &amp; Common Pitfalls</a>
 <ul>
-<li>a way to specify which Ingress Controller is responsible for handling a particular Ingress resource</li>
+<li><a href="#51-resource-management-and-avoiding-memory-leaks">5.1. Resource Management and Avoiding Memory Leaks</a></li>
+<li><a href="#52-handling-network-errors-gracefully">5.2. Handling Network Errors Gracefully</a></li>
+<li><a href="#53-security-considerations-in-networking">5.3. Security Considerations in Networking</a></li>
+</ul>
+</li>
+<li><a href="#6-conclusion">6. Conclusion</a>
+<ul>
+<li><a href="#summary-of-key-learnings">Summary of Key Learnings</a></li>
+<li><a href="#guidance-for-choosing-tcp-vs-udp">Guidance for Choosing TCP vs UDP</a></li>
 </ul>
 </li>
 </ul>
-<h2 id="4-curious-question">4. Curious question</h2>
-<p>Q: Why Do You Need Ingress?
-A: Without Ingress, to expose multiple applications or services externally, you would need many individual LoadBalancer services, which becomes expensive and complex quickly.</p>
+<h1 id="1-introduction">1. Introduction</h1>
+<h3 id="--why-understanding-networking-is-crucial-for-backend-developers">- Why understanding networking is crucial for backend developers</h3>
+<p>In today’s connected world, backend developers are expected to build reliable, scalable, and high-performance systems. Whether you’re designing REST APIs, microservices, real-time chat apps, or distributed systems, a solid understanding of computer networking is essential. Knowing how data is transmitted, how connections are established, and what trade-offs exist between reliability and speed empowers you to make better architectural decisions and debug network issues effectively.</p>
         </div>
-        <a href="/kubernetes/kubernetes-service-types-and-ingress/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        <a href="/programming-language/mastering-tcp-udp-in-golang/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
       </div>
     </div>
   </div>
@@ -313,7 +320,7 @@ A: Without Ingress, to expose multiple applications or services externally, you 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://lamthanhnguyen.github.io/" >
     &copy;  Liam Blogs 2025 
   </a>
     <div><div class="ananke-socials"><a href="http://linkedin.com/in/lam-thanh-nguyen-abcd6789" target="_blank" rel="noopener"

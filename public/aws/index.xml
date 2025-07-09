@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AWS on Liam Blogs</title>
-    <link>http://localhost:1313/aws/</link>
+    <link>https://lamthanhnguyen.github.io/aws/</link>
     <description>Recent content in AWS on Liam Blogs</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/aws/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lamthanhnguyen.github.io/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>I. Auto build &amp; push Docker Image to AWS ECR with Github Actions</title>
-      <link>http://localhost:1313/aws/ci-docker-to-aws-ecr-with-github-actions/</link>
+      <link>https://lamthanhnguyen.github.io/aws/ci-docker-to-aws-ecr-with-github-actions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/aws/ci-docker-to-aws-ecr-with-github-actions/</guid>
+      <guid>https://lamthanhnguyen.github.io/aws/ci-docker-to-aws-ecr-with-github-actions/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Automating the build and deployment of Docker images using GitHub Actions and AWS Elastic Container Registry (ECR) significantly streamlines your software delivery process.&lt;/p&gt;&#xA;&lt;p&gt;By integrating these powerful tools, developers benefit from reduced manual intervention, minimized errors, and accelerated deployment cycles.&lt;/p&gt;&#xA;&lt;p&gt;GitHub Actions automates your build workflow whenever code changes, while AWS ECR securely stores and manages your container images, ensuring reliability and scalability.&lt;/p&gt;&#xA;&lt;p&gt;In this guide, you&amp;rsquo;ll learn step-by-step how to effortlessly set up continuous integration and continuous deployment (CI/CD) to AWS ECR, maximizing your development efficiency.&lt;/p&gt;</description>
     </item>
   </channel>

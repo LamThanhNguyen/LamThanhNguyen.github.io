@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
@@ -11,12 +11,12 @@
     
     
     
-      <meta name="robots" content="noindex, nofollow">
+      <meta name="robots" content="index, follow">
     
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css" >
 
 
 
@@ -34,10 +34,10 @@
     
 
     
-      <link rel="canonical" href="http://localhost:1313/kubernetes/kubernetes-service-types-and-ingress/">
+      <link rel="canonical" href="https://lamthanhnguyen.github.io/kubernetes/kubernetes-service-types-and-ingress/">
     
 
-    <meta property="og:url" content="http://localhost:1313/kubernetes/kubernetes-service-types-and-ingress/">
+    <meta property="og:url" content="https://lamthanhnguyen.github.io/kubernetes/kubernetes-service-types-and-ingress/">
   <meta property="og:site_name" content="Liam Blogs">
   <meta property="og:title" content="II. Understanding Kubernetes Service Types & Ingress">
   <meta property="og:description" content="Understanding Kubernetes Service Types &amp; Ingress">
@@ -58,8 +58,10 @@
   <meta name="twitter:title" content="II. Understanding Kubernetes Service Types & Ingress">
   <meta name="twitter:description" content="Understanding Kubernetes Service Types &amp; Ingress">
 
+      
+    
 	
-  </head><body class="ma0 avenir bg-near-white development">
+  </head><body class="ma0 avenir bg-near-white production">
 
     
    
@@ -68,7 +70,7 @@
   
   
   
-  <header class="cover bg-center" style="background-image: url('http://localhost:1313/images/k8s-service-types-and-ingress.png');">
+  <header class="cover bg-center" style="background-image: url('https://lamthanhnguyen.github.io/images/k8s-service-types-and-ingress.png');">
     <div class="bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l center items-center justify-between">
@@ -152,7 +154,7 @@
       <aside class="instapaper_ignoref b helvetica tracked ttu">
           
         Kubernetes
-      </aside><div id="sharing" class="mt3 ananke-socials"><a href="https://www.linkedin.com/shareArticle?&amp;mini=true&amp;source=http%3A%2F%2Flocalhost%3A1313%2Fkubernetes%2Fkubernetes-service-types-and-ingress%2F&amp;summary=1.&#43;Introduction&#43;Why&#43;exposing&#43;services&#43;matters&#43;in&#43;Kubernetes%3A%0AYour&#43;workloads&#43;are&#43;useless&#43;if&#43;no&#43;one&#43;can&#43;reach&#43;them.&#43;Service&#43;abstraction&#43;lets&#43;you&#43;decouple&#43;pod&#43;lifecycles&#43;from&#43;stable&#43;endpoints.&#43;Overview&#43;of&#43;Service&#43;types&#43;vs.&#43;Ingress%3A%0AServices&#43;give&#43;every&#43;workload&#43;an&#43;IP%3B&#43;Ingress&#43;turns&#43;a&#43;set&#43;of&#43;Services&#43;into&#43;a&#43;coherent%2C&#43;externally&#43;reachable&#43;API&#43;surface.&#43;2.&#43;Kubernetes&#43;Service&#43;Types&#43;Explained&#43;a.&#43;ClusterIP&#43;-&#43;Exposes&#43;the&#43;Service&#43;on&#43;a&#43;cluster-internal&#43;IP&#43;-&#43;Accessible&#43;%2A%2Aonly&#43;inside%2A%2A&#43;the&#43;cluster&#43;-&#43;Typical&#43;use%3A&#43;-&#43;Internal-only&#43;services&#43;-&#43;Microservices&#43;talking&#43;to&#43;each&#43;other&#43;b.&#43;NodePort&#43;-&#43;Exposes&#43;the&#43;Service&#43;on&#43;each&#43;node%E2%80%99s&#43;IP&#43;at&#43;a&#43;static&#43;port&#43;%28the&#43;NodePort%29&#43;-&#43;Accessible&#43;from&#43;outside&#43;the&#43;cluster%3A&#43;same&#43;VPC&#43;or&#43;the&#43;internet&#43;%28depending&#43;on&#43;firewall%2FSecurity&#43;Group&#43;rules%29&#43;-&#43;Reachable&#43;via&#43;%2A%2ANodeIP%3ANodePort%2A%2A&#43;%28port&#43;range&#43;30000&#43;-&#43;32767%29&#43;-&#43;Typical&#43;use%3A&#43;-&#43;Simple&#43;setups%2C&#43;debugging%2C&#43;or&#43;in&#43;environments&#43;without&#43;cloud&#43;LBs.&#43;-&#43;Quick&#43;test&#43;or&#43;direct&#43;access%2C&#43;not&#43;recommended&#43;for&#43;production&#43;internet-facing&#43;apps.&#43;c.&#43;LoadBalancer&#43;-&#43;Creates&#43;a&#43;cloud&#43;load&#43;balancer&#43;%28cloud&#43;provider&#43;integration%2C&#43;e.g.%2C&#43;AWS&#43;ALB%29.&#43;-&#43;Assigns&#43;a&#43;public&#43;IP&#43;and&#43;routes&#43;traffic&#43;to&#43;your&#43;Service.&#43;-&#43;Accessible&#43;from&#43;the&#43;internet.&#43;-&#43;Typical&#43;use%3A&#43;exposing&#43;production&#43;workloads&#43;to&#43;the&#43;internet&#43;%28websites%2C&#43;APIs%29.&#43;d.&#43;ExternalName&#43;-&#43;Maps&#43;the&#43;Service&#43;to&#43;an&#43;external&#43;DNS&#43;name.&#43;-&#43;Used&#43;for&#43;routing&#43;cluster&#43;traffic&#43;to&#43;resources&#43;outside&#43;Kubernetes.&#43;-&#43;Not&#43;used&#43;for&#43;exposing&#43;services&#43;to&#43;the&#43;internet.&#43;-&#43;Typical&#43;use%3A&#43;referencing&#43;services&#43;outside&#43;the&#43;cluster&#43;by&#43;DNS&#43;name%28database%2CSaaS&#43;endpoints%29.&#43;3.&#43;Ingress&#43;Ingress&#43;is&#43;a&#43;Kubernetes&#43;resource&#43;that&#43;manages&#43;external&#43;HTTP%2FHTTPS&#43;traffic&#43;Receives&#43;incoming&#43;requests&#43;from&#43;outside&#43;the&#43;cluster&#43;Routes&#43;them&#43;to&#43;the&#43;right&#43;Service&#43;based&#43;on&#43;rules&#43;%28URL&#43;path%2C&#43;host%2C&#43;headers%E2%80%A6%29&#43;Typical&#43;flow%3A&#43;User&#43;%E2%86%92&#43;ALB%2FNLB%2FNGINX&#43;%28provisioned&#43;by&#43;the&#43;Ingress&#43;Controller%29&#43;%E2%86%92&#43;Service&#43;%E2%86%92&#43;Pods.&#43;Ingress&#43;Controller%3A&#43;A&#43;pod%2Fdeployment&#43;running&#43;inside&#43;your&#43;cluster&#43;monitors&#43;your&#43;Ingress&#43;resources.&#43;configures&#43;and&#43;manages&#43;actual&#43;routing&#43;rules&#43;on&#43;a&#43;cloud&#43;load&#43;balancer&#43;Ingress&#43;Class%3A&#43;a&#43;way&#43;to&#43;specify&#43;which&#43;Ingress&#43;Controller&#43;is&#43;responsible&#43;for&#43;handling&#43;a&#43;particular&#43;Ingress&#43;resource&#43;4.&#43;Curious&#43;question&#43;Q%3A&#43;Why&#43;Do&#43;You&#43;Need&#43;Ingress%3F&#43;A%3A&#43;Without&#43;Ingress%2C&#43;to&#43;expose&#43;multiple&#43;applications&#43;or&#43;services&#43;externally%2C&#43;you&#43;would&#43;need&#43;many&#43;individual&#43;LoadBalancer&#43;services%2C&#43;which&#43;becomes&#43;expensive&#43;and&#43;complex&#43;quickly.%0A&amp;title=II.&#43;Understanding&#43;Kubernetes&#43;Service&#43;Types&#43;%26amp%3B&#43;Ingress&amp;url=http%3A%2F%2Flocalhost%3A1313%2Fkubernetes%2Fkubernetes-service-types-and-ingress%2F"
+      </aside><div id="sharing" class="mt3 ananke-socials"><a href="https://www.linkedin.com/shareArticle?&amp;mini=true&amp;source=https%3A%2F%2Flamthanhnguyen.github.io%2Fkubernetes%2Fkubernetes-service-types-and-ingress%2F&amp;summary=1.&#43;Introduction&#43;Why&#43;exposing&#43;services&#43;matters&#43;in&#43;Kubernetes%3A%0AYour&#43;workloads&#43;are&#43;useless&#43;if&#43;no&#43;one&#43;can&#43;reach&#43;them.&#43;Service&#43;abstraction&#43;lets&#43;you&#43;decouple&#43;pod&#43;lifecycles&#43;from&#43;stable&#43;endpoints.&#43;Overview&#43;of&#43;Service&#43;types&#43;vs.&#43;Ingress%3A%0AServices&#43;give&#43;every&#43;workload&#43;an&#43;IP%3B&#43;Ingress&#43;turns&#43;a&#43;set&#43;of&#43;Services&#43;into&#43;a&#43;coherent%2C&#43;externally&#43;reachable&#43;API&#43;surface.&#43;2.&#43;Kubernetes&#43;Service&#43;Types&#43;Explained&#43;a.&#43;ClusterIP&#43;-&#43;Exposes&#43;the&#43;Service&#43;on&#43;a&#43;cluster-internal&#43;IP&#43;-&#43;Accessible&#43;%2A%2Aonly&#43;inside%2A%2A&#43;the&#43;cluster&#43;-&#43;Typical&#43;use%3A&#43;-&#43;Internal-only&#43;services&#43;-&#43;Microservices&#43;talking&#43;to&#43;each&#43;other&#43;b.&#43;NodePort&#43;-&#43;Exposes&#43;the&#43;Service&#43;on&#43;each&#43;node%E2%80%99s&#43;IP&#43;at&#43;a&#43;static&#43;port&#43;%28the&#43;NodePort%29&#43;-&#43;Accessible&#43;from&#43;outside&#43;the&#43;cluster%3A&#43;same&#43;VPC&#43;or&#43;the&#43;internet&#43;%28depending&#43;on&#43;firewall%2FSecurity&#43;Group&#43;rules%29&#43;-&#43;Reachable&#43;via&#43;%2A%2ANodeIP%3ANodePort%2A%2A&#43;%28port&#43;range&#43;30000&#43;-&#43;32767%29&#43;-&#43;Typical&#43;use%3A&#43;-&#43;Simple&#43;setups%2C&#43;debugging%2C&#43;or&#43;in&#43;environments&#43;without&#43;cloud&#43;LBs.&#43;-&#43;Quick&#43;test&#43;or&#43;direct&#43;access%2C&#43;not&#43;recommended&#43;for&#43;production&#43;internet-facing&#43;apps.&#43;c.&#43;LoadBalancer&#43;-&#43;Creates&#43;a&#43;cloud&#43;load&#43;balancer&#43;%28cloud&#43;provider&#43;integration%2C&#43;e.g.%2C&#43;AWS&#43;ALB%29.&#43;-&#43;Assigns&#43;a&#43;public&#43;IP&#43;and&#43;routes&#43;traffic&#43;to&#43;your&#43;Service.&#43;-&#43;Accessible&#43;from&#43;the&#43;internet.&#43;-&#43;Typical&#43;use%3A&#43;exposing&#43;production&#43;workloads&#43;to&#43;the&#43;internet&#43;%28websites%2C&#43;APIs%29.&#43;d.&#43;ExternalName&#43;-&#43;Maps&#43;the&#43;Service&#43;to&#43;an&#43;external&#43;DNS&#43;name.&#43;-&#43;Used&#43;for&#43;routing&#43;cluster&#43;traffic&#43;to&#43;resources&#43;outside&#43;Kubernetes.&#43;-&#43;Not&#43;used&#43;for&#43;exposing&#43;services&#43;to&#43;the&#43;internet.&#43;-&#43;Typical&#43;use%3A&#43;referencing&#43;services&#43;outside&#43;the&#43;cluster&#43;by&#43;DNS&#43;name%28database%2CSaaS&#43;endpoints%29.&#43;3.&#43;Ingress&#43;Ingress&#43;is&#43;a&#43;Kubernetes&#43;resource&#43;that&#43;manages&#43;external&#43;HTTP%2FHTTPS&#43;traffic&#43;Receives&#43;incoming&#43;requests&#43;from&#43;outside&#43;the&#43;cluster&#43;Routes&#43;them&#43;to&#43;the&#43;right&#43;Service&#43;based&#43;on&#43;rules&#43;%28URL&#43;path%2C&#43;host%2C&#43;headers%E2%80%A6%29&#43;Typical&#43;flow%3A&#43;User&#43;%E2%86%92&#43;ALB%2FNLB%2FNGINX&#43;%28provisioned&#43;by&#43;the&#43;Ingress&#43;Controller%29&#43;%E2%86%92&#43;Service&#43;%E2%86%92&#43;Pods.&#43;Ingress&#43;Controller%3A&#43;A&#43;pod%2Fdeployment&#43;running&#43;inside&#43;your&#43;cluster&#43;monitors&#43;your&#43;Ingress&#43;resources.&#43;configures&#43;and&#43;manages&#43;actual&#43;routing&#43;rules&#43;on&#43;a&#43;cloud&#43;load&#43;balancer&#43;Ingress&#43;Class%3A&#43;a&#43;way&#43;to&#43;specify&#43;which&#43;Ingress&#43;Controller&#43;is&#43;responsible&#43;for&#43;handling&#43;a&#43;particular&#43;Ingress&#43;resource&#43;4.&#43;Curious&#43;question&#43;Q%3A&#43;Why&#43;Do&#43;You&#43;Need&#43;Ingress%3F&#43;A%3A&#43;Without&#43;Ingress%2C&#43;to&#43;expose&#43;multiple&#43;applications&#43;or&#43;services&#43;externally%2C&#43;you&#43;would&#43;need&#43;many&#43;individual&#43;LoadBalancer&#43;services%2C&#43;which&#43;becomes&#43;expensive&#43;and&#43;complex&#43;quickly.%0A&amp;title=II.&#43;Understanding&#43;Kubernetes&#43;Service&#43;Types&#43;%26amp%3B&#43;Ingress&amp;url=https%3A%2F%2Flamthanhnguyen.github.io%2Fkubernetes%2Fkubernetes-service-types-and-ingress%2F"
         class="ananke-social-link linkedin no-underline"
         title="Share on LinkedIn" aria-label="Share on LinkedIn"
         target="_blank" rel="nofollow noopener noreferrer">
@@ -308,7 +310,7 @@ A:
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://lamthanhnguyen.github.io/" >
     &copy;  Liam Blogs 2025 
   </a>
     <div><div class="ananke-socials"><a href="http://linkedin.com/in/lam-thanh-nguyen-abcd6789" target="_blank" rel="noopener"

@@ -198,8 +198,8 @@ json.Unmarshal(buf[:n], &msg)
 ```
 
 ### Using Protocol Buffers (Protobuf)
-- Define your message schema in a .proto file, compile it with protoc.
-- Use generated Go structs and the proto package to encode/decode.
+- Define your message schema in a *.proto* file, compile it with *protoc*.
+- Use generated Go structs and the *proto* package to encode/decode.
 - More efficient than JSON for large-scale or performance-sensitive systems.
 
 ```go
@@ -342,6 +342,6 @@ In this deep dive, you’ve explored both the theory and practice of TCP and UDP
 - Best practices and common pitfalls in real-world networking.
 
 ## Guidance for Choosing TCP vs UDP
-- Choose TCP when you need reliable, ordered, and error-checked delivery—think web servers, file transfers, and databases.
-- Choose UDP when you value speed and low latency over reliability—think video streaming, gaming, or real-time broadcasts.
+- **Choose TCP** when you need reliable, ordered, and error-checked delivery—think web servers, file transfers, and databases.
+- **Choose UDP** when you value speed and low latency over reliability—think video streaming, gaming, or real-time broadcasts.
 - For many modern applications, you might even combine both, using TCP for control and UDP for real-time data.
