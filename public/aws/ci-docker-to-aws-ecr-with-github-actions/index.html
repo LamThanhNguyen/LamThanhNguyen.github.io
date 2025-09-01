@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
@@ -15,12 +15,12 @@ In this guide, you&rsquo;ll learn step-by-step how to effortlessly set up contin
     
     
     
-      <meta name="robots" content="index, follow">
+      <meta name="robots" content="noindex, nofollow">
     
     
 
     
-<link rel="stylesheet" href="/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css" >
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
 
 
 
@@ -38,10 +38,10 @@ In this guide, you&rsquo;ll learn step-by-step how to effortlessly set up contin
     
 
     
-      <link rel="canonical" href="https://lamthanhnguyen.github.io/aws/ci-docker-to-aws-ecr-with-github-actions/">
+      <link rel="canonical" href="http://localhost:1313/aws/ci-docker-to-aws-ecr-with-github-actions/">
     
 
-    <meta property="og:url" content="https://lamthanhnguyen.github.io/aws/ci-docker-to-aws-ecr-with-github-actions/">
+    <meta property="og:url" content="http://localhost:1313/aws/ci-docker-to-aws-ecr-with-github-actions/">
   <meta property="og:site_name" content="Liam Blogs">
   <meta property="og:title" content="I. Auto build & push Docker Image to AWS ECR with Github Actions">
   <meta property="og:description" content="Introduction Automating the build and deployment of Docker images using GitHub Actions and AWS Elastic Container Registry (ECR) significantly streamlines your software delivery process.
@@ -70,10 +70,8 @@ By integrating these powerful tools, developers benefit from reduced manual inte
 GitHub Actions automates your build workflow whenever code changes, while AWS ECR securely stores and manages your container images, ensuring reliability and scalability.
 In this guide, you’ll learn step-by-step how to effortlessly set up continuous integration and continuous deployment (CI/CD) to AWS ECR, maximizing your development efficiency.">
 
-      
-    
 	
-  </head><body class="ma0 avenir bg-near-white production">
+  </head><body class="ma0 avenir bg-near-white development">
 
     
    
@@ -82,7 +80,7 @@ In this guide, you’ll learn step-by-step how to effortlessly set up continuous
   
   
   
-  <header class="cover bg-center" style="background-image: url('https://lamthanhnguyen.github.io/images/auto-build-push-docker-to-aws-ecr-github-actions.png');">
+  <header class="cover bg-center" style="background-image: url('http://localhost:1313/images/auto-build-push-docker-to-aws-ecr-github-actions.png');">
     <div class="bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l center items-center justify-between">
@@ -162,7 +160,7 @@ In this guide, you’ll learn step-by-step how to effortlessly set up continuous
       <aside class="instapaper_ignoref b helvetica tracked ttu">
           
         AWS
-      </aside><div id="sharing" class="mt3 ananke-socials"><a href="https://www.linkedin.com/shareArticle?&amp;mini=true&amp;source=https%3A%2F%2Flamthanhnguyen.github.io%2Faws%2Fci-docker-to-aws-ecr-with-github-actions%2F&amp;summary=Introduction&#43;Automating&#43;the&#43;build&#43;and&#43;deployment&#43;of&#43;Docker&#43;images&#43;using&#43;GitHub&#43;Actions&#43;and&#43;AWS&#43;Elastic&#43;Container&#43;Registry&#43;%28ECR%29&#43;significantly&#43;streamlines&#43;your&#43;software&#43;delivery&#43;process.%0ABy&#43;integrating&#43;these&#43;powerful&#43;tools%2C&#43;developers&#43;benefit&#43;from&#43;reduced&#43;manual&#43;intervention%2C&#43;minimized&#43;errors%2C&#43;and&#43;accelerated&#43;deployment&#43;cycles.%0AGitHub&#43;Actions&#43;automates&#43;your&#43;build&#43;workflow&#43;whenever&#43;code&#43;changes%2C&#43;while&#43;AWS&#43;ECR&#43;securely&#43;stores&#43;and&#43;manages&#43;your&#43;container&#43;images%2C&#43;ensuring&#43;reliability&#43;and&#43;scalability.%0AIn&#43;this&#43;guide%2C&#43;you%26amp%3Brsquo%3Bll&#43;learn&#43;step-by-step&#43;how&#43;to&#43;effortlessly&#43;set&#43;up&#43;continuous&#43;integration&#43;and&#43;continuous&#43;deployment&#43;%28CI%2FCD%29&#43;to&#43;AWS&#43;ECR%2C&#43;maximizing&#43;your&#43;development&#43;efficiency.%0A&amp;title=I.&#43;Auto&#43;build&#43;%26amp%3B&#43;push&#43;Docker&#43;Image&#43;to&#43;AWS&#43;ECR&#43;with&#43;Github&#43;Actions&amp;url=https%3A%2F%2Flamthanhnguyen.github.io%2Faws%2Fci-docker-to-aws-ecr-with-github-actions%2F"
+      </aside><div id="sharing" class="mt3 ananke-socials"><a href="https://www.linkedin.com/shareArticle?&amp;mini=true&amp;source=http%3A%2F%2Flocalhost%3A1313%2Faws%2Fci-docker-to-aws-ecr-with-github-actions%2F&amp;summary=Introduction&#43;Automating&#43;the&#43;build&#43;and&#43;deployment&#43;of&#43;Docker&#43;images&#43;using&#43;GitHub&#43;Actions&#43;and&#43;AWS&#43;Elastic&#43;Container&#43;Registry&#43;%28ECR%29&#43;significantly&#43;streamlines&#43;your&#43;software&#43;delivery&#43;process.%0ABy&#43;integrating&#43;these&#43;powerful&#43;tools%2C&#43;developers&#43;benefit&#43;from&#43;reduced&#43;manual&#43;intervention%2C&#43;minimized&#43;errors%2C&#43;and&#43;accelerated&#43;deployment&#43;cycles.%0AGitHub&#43;Actions&#43;automates&#43;your&#43;build&#43;workflow&#43;whenever&#43;code&#43;changes%2C&#43;while&#43;AWS&#43;ECR&#43;securely&#43;stores&#43;and&#43;manages&#43;your&#43;container&#43;images%2C&#43;ensuring&#43;reliability&#43;and&#43;scalability.%0AIn&#43;this&#43;guide%2C&#43;you%26amp%3Brsquo%3Bll&#43;learn&#43;step-by-step&#43;how&#43;to&#43;effortlessly&#43;set&#43;up&#43;continuous&#43;integration&#43;and&#43;continuous&#43;deployment&#43;%28CI%2FCD%29&#43;to&#43;AWS&#43;ECR%2C&#43;maximizing&#43;your&#43;development&#43;efficiency.%0A&amp;title=I.&#43;Auto&#43;build&#43;%26amp%3B&#43;push&#43;Docker&#43;Image&#43;to&#43;AWS&#43;ECR&#43;with&#43;Github&#43;Actions&amp;url=http%3A%2F%2Flocalhost%3A1313%2Faws%2Fci-docker-to-aws-ecr-with-github-actions%2F"
         class="ananke-social-link linkedin no-underline"
         title="Share on LinkedIn" aria-label="Share on LinkedIn"
         target="_blank" rel="nofollow noopener noreferrer">
@@ -329,7 +327,7 @@ In this guide, you’ll learn step-by-step how to effortlessly set up continuous
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://lamthanhnguyen.github.io/" >
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
     &copy;  Liam Blogs 2025 
   </a>
     <div><div class="ananke-socials"><a href="http://linkedin.com/in/lam-thanh-nguyen-abcd6789" target="_blank" rel="noopener"

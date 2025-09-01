@@ -2,150 +2,150 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Liam Blogs</title>
-    <link>https://lamthanhnguyen.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Liam Blogs</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://lamthanhnguyen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Design Pattern</title>
-      <link>https://lamthanhnguyen.github.io/tags/design-pattern/</link>
+      <link>http://localhost:1313/tags/design-pattern/</link>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/design-pattern/</guid>
+      <guid>http://localhost:1313/tags/design-pattern/</guid>
       <description></description>
     </item>
     <item>
       <title>Mongodb</title>
-      <link>https://lamthanhnguyen.github.io/tags/mongodb/</link>
+      <link>http://localhost:1313/tags/mongodb/</link>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/mongodb/</guid>
+      <guid>http://localhost:1313/tags/mongodb/</guid>
       <description></description>
     </item>
     <item>
       <title>Nosql</title>
-      <link>https://lamthanhnguyen.github.io/tags/nosql/</link>
+      <link>http://localhost:1313/tags/nosql/</link>
       <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/nosql/</guid>
+      <guid>http://localhost:1313/tags/nosql/</guid>
       <description></description>
     </item>
     <item>
       <title>Aws</title>
-      <link>https://lamthanhnguyen.github.io/tags/aws/</link>
+      <link>http://localhost:1313/tags/aws/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/aws/</guid>
+      <guid>http://localhost:1313/tags/aws/</guid>
       <description></description>
     </item>
     <item>
       <title>Cli</title>
-      <link>https://lamthanhnguyen.github.io/tags/cli/</link>
+      <link>http://localhost:1313/tags/cli/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/cli/</guid>
+      <guid>http://localhost:1313/tags/cli/</guid>
       <description></description>
     </item>
     <item>
       <title>Concurrency</title>
-      <link>https://lamthanhnguyen.github.io/tags/concurrency/</link>
+      <link>http://localhost:1313/tags/concurrency/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/concurrency/</guid>
+      <guid>http://localhost:1313/tags/concurrency/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
-      <link>https://lamthanhnguyen.github.io/tags/docker/</link>
+      <link>http://localhost:1313/tags/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/docker/</guid>
+      <guid>http://localhost:1313/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Ecr</title>
-      <link>https://lamthanhnguyen.github.io/tags/ecr/</link>
+      <link>http://localhost:1313/tags/ecr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/ecr/</guid>
+      <guid>http://localhost:1313/tags/ecr/</guid>
       <description></description>
     </item>
     <item>
       <title>Eks</title>
-      <link>https://lamthanhnguyen.github.io/tags/eks/</link>
+      <link>http://localhost:1313/tags/eks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/eks/</guid>
+      <guid>http://localhost:1313/tags/eks/</guid>
       <description></description>
     </item>
     <item>
       <title>Github-Actions</title>
-      <link>https://lamthanhnguyen.github.io/tags/github-actions/</link>
+      <link>http://localhost:1313/tags/github-actions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/github-actions/</guid>
+      <guid>http://localhost:1313/tags/github-actions/</guid>
       <description></description>
     </item>
     <item>
       <title>Golang</title>
-      <link>https://lamthanhnguyen.github.io/tags/golang/</link>
+      <link>http://localhost:1313/tags/golang/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/golang/</guid>
+      <guid>http://localhost:1313/tags/golang/</guid>
       <description></description>
     </item>
     <item>
       <title>Ingress</title>
-      <link>https://lamthanhnguyen.github.io/tags/ingress/</link>
+      <link>http://localhost:1313/tags/ingress/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/ingress/</guid>
+      <guid>http://localhost:1313/tags/ingress/</guid>
       <description></description>
     </item>
     <item>
       <title>Kubectl</title>
-      <link>https://lamthanhnguyen.github.io/tags/kubectl/</link>
+      <link>http://localhost:1313/tags/kubectl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/kubectl/</guid>
+      <guid>http://localhost:1313/tags/kubectl/</guid>
       <description></description>
     </item>
     <item>
       <title>Kubernetes</title>
-      <link>https://lamthanhnguyen.github.io/tags/kubernetes/</link>
+      <link>http://localhost:1313/tags/kubernetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/kubernetes/</guid>
+      <guid>http://localhost:1313/tags/kubernetes/</guid>
       <description></description>
     </item>
     <item>
       <title>Load Balancer</title>
-      <link>https://lamthanhnguyen.github.io/tags/load-balancer/</link>
+      <link>http://localhost:1313/tags/load-balancer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/load-balancer/</guid>
+      <guid>http://localhost:1313/tags/load-balancer/</guid>
       <description></description>
     </item>
     <item>
       <title>Parallelism</title>
-      <link>https://lamthanhnguyen.github.io/tags/parallelism/</link>
+      <link>http://localhost:1313/tags/parallelism/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/parallelism/</guid>
+      <guid>http://localhost:1313/tags/parallelism/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>https://lamthanhnguyen.github.io/tags/python/</link>
+      <link>http://localhost:1313/tags/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/python/</guid>
+      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Service Type</title>
-      <link>https://lamthanhnguyen.github.io/tags/service-type/</link>
+      <link>http://localhost:1313/tags/service-type/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/service-type/</guid>
+      <guid>http://localhost:1313/tags/service-type/</guid>
       <description></description>
     </item>
     <item>
       <title>Tcp</title>
-      <link>https://lamthanhnguyen.github.io/tags/tcp/</link>
+      <link>http://localhost:1313/tags/tcp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/tcp/</guid>
+      <guid>http://localhost:1313/tags/tcp/</guid>
       <description></description>
     </item>
     <item>
       <title>Udp</title>
-      <link>https://lamthanhnguyen.github.io/tags/udp/</link>
+      <link>http://localhost:1313/tags/udp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://lamthanhnguyen.github.io/tags/udp/</guid>
+      <guid>http://localhost:1313/tags/udp/</guid>
       <description></description>
     </item>
   </channel>
