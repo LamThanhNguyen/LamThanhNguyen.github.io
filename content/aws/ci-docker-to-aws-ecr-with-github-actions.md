@@ -7,11 +7,11 @@ description: ""
 
 ## Introduction
 
-Automating the build and deployment of Docker images using GitHub Actions and AWS Elastic Container Registry (ECR) significantly streamlines your software delivery process. 
+Automating the build and deployment of Docker images using GitHub Actions and AWS Elastic Container Registry (ECR) significantly streamlines your software delivery process.
 
 By integrating these powerful tools, developers benefit from reduced manual intervention, minimized errors, and accelerated deployment cycles. 
 
-GitHub Actions automates your build workflow whenever code changes, while AWS ECR securely stores and manages your container images, ensuring reliability and scalability. 
+GitHub Actions automates your build workflow whenever code changes, while AWS ECR securely stores and manages your container images, ensuring reliability and scalability.
 
 In this guide, you'll learn step-by-step how to effortlessly set up continuous integration and continuous deployment (CI/CD) to AWS ECR, maximizing your development efficiency.
 
