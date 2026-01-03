@@ -1,11 +1,12 @@
 ---
-description: ""
-featured_image: "/images/auto-build-push-docker-to-aws-ecr-github-actions.png"
-tags: ["aws", "github-actions", "ecr", "docker"]
 title: "I. Auto build & push Docker Image to AWS ECR with Github Actions"
+tags: ["aws", "github-actions", "ecr", "docker"]
+featured_image: "/images/auto-build-push-docker-to-aws-ecr-github-actions.png"
+description: ""
 ---
 
 ## Introduction
+
 Automating the build and deployment of Docker images using GitHub Actions and AWS Elastic Container Registry (ECR) significantly streamlines your software delivery process. 
 
 By integrating these powerful tools, developers benefit from reduced manual intervention, minimized errors, and accelerated deployment cycles. 
@@ -15,39 +16,43 @@ GitHub Actions automates your build workflow whenever code changes, while AWS EC
 In this guide, you'll learn step-by-step how to effortlessly set up continuous integration and continuous deployment (CI/CD) to AWS ECR, maximizing your development efficiency.
 
 ## 1. Create ECR Repository
+
 - Create simple ECR repository via AWS Console
-    - Repository Name: banking-system
-    - Image tag mutability: Immutable
-    - Encryption configuration: AES-256
-    - Scan on push: Enable
+  - Repository Name: banking-system
+  - Image tag mutability: Immutable
+  - Encryption configuration: AES-256
+  - Scan on push: Enable
 
 ## 2. Setting up GitHub Actions OIDC authentication with AWS
+
 - Add GitHub as an OIDC Identity Provider in AWS
-    - Open the AWS IAM Console: AWS IAM Console => Identity providers => Add provider
-    - Provider Type: OIDC
-    - Provider URL: https://token.actions.githubusercontent.com
-    - Audience: sts.amazonaws.com
+  - Open the AWS IAM Console: AWS IAM Console => Identity providers => Add provider
+  - Provider Type: OIDC
+  - Provider URL: https://token.actions.githubusercontent.com
+  - Audience: sts.amazonaws.com
 
 - Create an IAM Role for GitHub Actions
-    - AWS IAM Console => Create role
-    - Trusted entity type: Web identity
-    - Identity provider: token.actions.githubusercontent.com
-    - Audience: sts.amazonaws.com
-    - GitHub organization: {{Your Github username or organization}}
-    - Add permissions:
-        - AmazonEC2ContainerRegistryFullAccess
-        - SecretsManagerReadWrite
-    - Role name: github-actions-deploy-role
+  - AWS IAM Console => Create role
+  - Trusted entity type: Web identity
+  - Identity provider: token.actions.githubusercontent.com
+  - Audience: sts.amazonaws.com
+  - GitHub organization: {{Your Github username or organization}}
+  - Add permissions:
+    - AmazonEC2ContainerRegistryFullAccess
+    - SecretsManagerReadWrite
+  - Role name: github-actions-deploy-role
 
 - After create the role successfull, please go inside the role and note the ARN of role.
 
 - In your Github repository => Settings => Secrets and variables => Actions:
-    - New repository secret
-    - Name: STAGING_GITHUB_ACTION_DEPLOY_ROLE
-    - Secret: ARN of AWS Role "github-actions-deploy-role" just created
+  - New repository secret
+  - Name: STAGING_GITHUB_ACTION_DEPLOY_ROLE
+  - Secret: ARN of AWS Role "github-actions-deploy-role" just created
 
-## 3. GitHub Actions pipleline
+## 3. GitHub Actions pipeline
+
 .github/workflows/deploy-staging.yaml
+
 ```yaml
 name: Deploy to staging
 

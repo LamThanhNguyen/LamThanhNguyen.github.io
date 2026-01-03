@@ -11,6 +11,7 @@ pagerSize = 10
 [params]
 favicon = "/images/favicon_logo.webp"
 recent_posts_number = 5
+custom_css = ["css/custom.css"]
 
 [params.ananke.social.share]
 networks = [
