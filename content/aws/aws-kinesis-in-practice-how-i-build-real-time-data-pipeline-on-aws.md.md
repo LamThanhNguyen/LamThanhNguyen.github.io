@@ -2,7 +2,7 @@
 title: "AWS Kinesis in Practice: How I Build Real-Time Data Pipelines on AWS"
 tags: [aws, kinesis, streaming, devops, data-engineering]
 featured_image: "/images/aws-kinesis-in-practice-how-i-build-real-time-data-pipeline-on-aws.png"
-description: ""
+description: "A guide to building real-time data pipelines on AWS using Kinesis. Includes architecture patterns for logs and IoT, plus a Terraform and Python implementation example"
 ---
 
 > AWS Kinesis helps you move from **batch** to **real-time**. In this post, I’ll walk through how Kinesis works, the key concepts you really need to know, and a couple of **real-world architectures** using Kinesis for logs and IoT-style data.
@@ -38,12 +38,12 @@ AWS Kinesis is a **family of managed services** for streaming data:
    - Ingests *ordered* streams of records in real time  
    - Your apps produce and consume events directly from the stream
 
-2. **Kinesis Data Firehose**  
+2. **Amazon Data Firehose**  
    - Fully managed “buffer and deliver” service  
    - Ingests streaming data and delivers to S3, Redshift, OpenSearch, or a custom HTTP endpoint  
    - No need to manage shards – AWS handles scaling for you
 
-3. **Kinesis Data Analytics**  
+3. **Amazon Managed Service for Apache Flink**  
    - Run **SQL** or **Flink** applications over streaming data  
    - Use it to build real-time metrics, aggregations, sliding windows, etc.
 
@@ -52,7 +52,7 @@ AWS Kinesis is a **family of managed services** for streaming data:
 
 ## III. Core concepts
 
-### Stream, records & partition key
+### 1. Stream, records & partition key
 
 - A **stream** is like a **pipe** of ordered data.
 - Your producer (app, Lambda, etc.) sends **records** into the stream.
@@ -63,7 +63,7 @@ AWS Kinesis is a **family of managed services** for streaming data:
 
 Records with the **same partition key** always go to the **same shard**, and therefore keep order relative to each other.
 
-### Shards (capacity & scaling)
+### 2. Shards (capacity & scaling)
 
 A **shard** is the unit of capacity in a Kinesis Data Stream:
 
@@ -75,14 +75,14 @@ If your system needs more throughput, you:
 - **Add shards** (scale-out)
 - Use **on-demand** mode, where AWS scales shard capacity for you (higher cost, less manual work)
 
-### Retention
+### 3. Retention
 
 Kinesis Data Streams can retain data for hours → days (even up to 365 days with extended retention). This means:
 
 - Consumers can **replay** from an older timestamp
 - You can add new consumers later and re-process historical data
 
-### Consumers & enhanced fan-out
+### 4. Consumers & enhanced fan-out
 
 Consumers are apps reading from the stream, e.g.:
 
@@ -108,11 +108,11 @@ A very common pattern: you want to centralize application logs/events and build 
 
 1. Services push events to Kinesis Data Streams  
    - via a language SDK or a sidecar/log forwarder
-2. A **Kinesis Data Firehose** delivery stream:
+2. A **Amazon Data Firehose** delivery stream:
    - reads from Kinesis Data Streams
    - buffers records (e.g. 1–5 minutes)
    - delivers compacted files to S3 (e.g. gzip/Parquet)
-3. Optional: **Kinesis Data Analytics**:
+3. Optional: **Amazon Managed Service for Apache Flink**:
    - runs SQL on the stream to compute real-time metrics
    - sends output to another stream, an SNS topic, or a Lambda for alerts
 4. BI / analytics tools like Athena, Glue + Redshift:
@@ -126,25 +126,7 @@ A very common pattern: you want to centralize application logs/events and build 
   - Batch via S3 data lake
 - **Scales with traffic**: add shards or use on-demand mode
 
-```text
-                        +----------------+
-                        | Microservices  |
-                        |(ECS, EKS, etc.)|
-                        +--------+-------+
-                                 |
-                                 v
-                        +-------------------+
-                        | Kinesis Data      |
-                        |     Streams       |
-                        +--------+----------+
-                                 |
-                  +---------------+----------------+
-                  |                                |
-                  v                                v
-               Lambda                          Firehose
-               Consumers                       S3/Redshift
-            (Real-time)                   (Batch/Analytics)
-```
+![Kinesis Data Pipeline Architecture](/images/kinesis_diagram_1.png)
 
 ## V. Real-world architecture: IoT sensor data pipeline
 
@@ -164,43 +146,21 @@ Another classic case for Kinesis is **IoT / sensor** data (temperature, moisture
 3. **Lambda consumers**:
    - validate and enrich data (add metadata: device_id, region, farm, etc.)
    - write hot data to DynamoDB / time-series database for quick queries
-4. **Firehose** (optional) delivers all raw data to S3:
+4. **Amazon Data Firehose** (optional) delivers all raw data to S3:
    - for long-term storage & analytics
 5. Analytics:
    - Athena/Glue/Redshift/EMR for historical analytics
-   - Data Analytics or Lambda-based rules for real-time alerts
+   - Managed Service for Apache Flink or Lambda-based rules for real-time alerts
 
 This architecture is very close to real-world projects in smart farming, smart home, logistics, EV charging, etc.
 
-```text
-                        +------------------+
-                        |   IoT Devices    |
-                        +--------+---------+
-                                 |
-                                 v
-                        +------------------+
-                        |   AWS IoT Core   |
-                        +--------+---------+
-                                 |
-                                 v
-                        +------------------+
-                        | Kinesis Data     |
-                        |     Streams      |
-                        +--------+---------+
-                                 |
-                        +----------+-----------+
-                        |                      |
-                        v                      v
-                     Lambda                  Firehose
-                  Consumers                S3/DynamoDB
-                  (Real-time)            (Batch/Analytics)
-```
+![Kinesis Data Pipeline Architecture](/images/kinesis_diagram_2.png)
 
 ## VI. Minimal Kinesis pipeline: Terraform + Python example
 
 ### Terraform: create a Kinesis stream
 
-```hcl
+```terraform
 resource "aws_kinesis_stream" "events" {
   name             = "demo-events-stream"
   shard_count      = 1
@@ -209,6 +169,12 @@ resource "aws_kinesis_stream" "events" {
   stream_mode_details {
     stream_mode = "PROVISIONED"
   }
+
+  shard_level_metrics = [
+    "IncomingBytes",
+    "OutgoingBytes",
+    "WriteProvisionedThroughputExceeded"
+  ]
 
   tags = {
     Environment = "dev"
@@ -316,21 +282,44 @@ if __name__ == "__main__":
 - Test replays
   - Occasionally test consuming from an older timestamp to ensure you can recover / reprocess data when needed
 
-## VIII. Kinesis vs Kafka vs SNS/SQS: when to choose what
+## VIII. The Decision Matrix: Kinesis vs. Kafka vs. SQS
 
-People often ask “Why not Kafka?” or “When should I use Kinesis vs SQS?”
+People often ask, "Why not just use Kafka for everything?" or "Is SQS enough?" Don't just choose based on popularity; choose based on your **ops appetite** and **data patterns**.
 
-- **Kinesis vs Kafka**
-  - Kafka: more control, self-managed or MSK, strong ecosystem
-  - Kinesis: fully managed, tightly integrated with AWS, less ops overhead
-  - If you are all-in on AWS and don’t want to manage clusters, Kinesis is often simpler.
-- **Kinesis vs SNS/SQS**
-  - SNS/SQS: great for **async messaging**, not optimized for replay or high-throughput analytics
-  - Kinesis:
-    - optimized for **streaming analytics**
-    - supports **multiple consumers**, replay, and long retention
-- If you just need a simple **queue** between services, SQS is enough.
-- If you need **streaming analytics / multiple downstream consumers / replay**, Kinesis fits better.
+### 1. Kinesis Data Streams vs. Kafka (MSK / Self-Hosted)
+
+**The Core Difference**: Kinesis is **serverless** (you manage shards). Kafka is **cluster-based** (you manage brokers/storage, even with MSK).
+
+- **Choose Kinesis if:**
+  - **You are 100% AWS**: The native integration with Lambda (event source mapping) and Amazon Data Firehose is unbeatable.
+  - **You want low Ops**: Scaling Kinesis is just an API call to split shards (or enabling On-Demand mode). Scaling Kafka often involves rebalancing partitions and managing broker disk space.
+  - **Simplicity**: You have a specific data pipe (e.g., "Logs to S3") and don't want to maintain a cluster.
+
+- **Choose Kafka (MSK) if:**
+  - **No Vendor Lock-in**: You need an open standard to potentially run on Azure, GCP, or on-prem.
+  - **Complex Retention (Log Compaction)**: You need features like **Log Compaction** (keeping only the latest state of a key), which Kinesis does not support.
+  - **Extreme Scale/Cost**: At massive scale (GBs/sec), a fixed-size Kafka cluster might be more cost-effective than paying per-shard fees in Kinesis.
+  - **Ecosystem**: You rely heavily on Kafka Connect, KSQL, or the Schema Registry.
+
+### 2. Kinesis vs. SQS
+
+**The Core Difference:** **Ordering** and **Replayability**.
+
+- **Choose SQS**:
+  - You need a simple **job queue** (e.g., "send this email", "resize this image").
+  - **Ordering is not critical** (or best-effort is sufficient).
+  - Once a message is processed, it should disappear (**no replay**).
+
+- **Choose Kinesis**:
+  - **Ordering is mandatory**: (e.g., Inventory updates must happen in sequence: Created -> Updated -> Deleted).
+  - **Multiple Consumers**: Several distinct apps need to read the same stream of events independently.
+  - **Replayability**: You might need to "rewind" the stream to re-process the last 24 hours of data after fixing a bug.
+
+### 3. Summary Rule of Thumb
+
+- Async tasks/jobs? -> **SQS**.
+- Real-time data pipeline on AWS? -> **Kinesis**.
+- Enterprise-wide event bus / Multi-cloud? -> **Kafka**.
 
 ## IX. Conclusion
 
